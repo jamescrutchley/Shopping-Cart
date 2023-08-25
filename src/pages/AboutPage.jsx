@@ -1,7 +1,10 @@
+import About from "../components/About";
+
 const AboutPage = () => {
     return (
         <section>
-            This is the About Page.
+            <h2>This is the About Page.</h2>
+            <About /> 
         </section>
     )
 }
