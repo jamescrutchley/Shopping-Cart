@@ -1,11 +1,17 @@
+import Header from "./components/Header"
+import Nav from "./components/Nav"
+import { Outlet } from "react-router-dom";
+
 
 function Root() {
 
   return (
-    <nav>
-        <a href={'/home'}>Home</a>
-        <a href={'/shop'}> Shop</a>
-    </nav>
+    <>
+    <Header />
+    <Nav />
+    <Outlet />
+    </>
+
   )
       
 }
