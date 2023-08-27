@@ -1,0 +1,27 @@
+@import './Root.module.css';
+
+.nav {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+
+    border: 1px solid black;
+}
+
+.nav a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.nav a:hover {
+    text-decoration: underline;
+}
+
+.pageLinks {
+    display: flex;
+    gap: 1rem;
+}

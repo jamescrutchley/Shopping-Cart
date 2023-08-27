@@ -1,0 +1,27 @@
+@import './Root.module.css';
+
+* {
+    color: var(--text-primary);
+    background-color: none;
+}
+
+.searchButton, .cartButton, .addToCart, .toggleTheme {
+    background: none;
+    border: none;
+}
+
+.searchButton:hover, .cartButton:hover, .addToCart:hover, .toggleTheme:hover {
+    cursor: pointer;
+}
+
+.cartButton {
+    width: 2%;
+}
+
+.addToCart {
+    width: 130%;
+    height: 120%;
+    background-color: var(--background-color);
+    border-radius: 50px;
+    border: 1px var(--accent) solid
+}

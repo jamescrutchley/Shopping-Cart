@@ -10,9 +10,23 @@
     --text-secondary: grey;
     --accent: darkred;
   }
+
+  *[data-theme='dark'] img {
+    filter: invert(100%);
+  }
   
+  button[data-theme='dark'] {
+    color: var(--text-primary);
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
 
    #root, header, footer, nav, div {
+    transition: background-color .3s;
     color: var(--text-primary);
     background-color: var(--background);
   }
@@ -21,3 +35,7 @@
     background-color: var(--background);
     color: var(--accent)
   }
+
+#root {
+    min-height: 100vh;
+}

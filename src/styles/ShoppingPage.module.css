@@ -1,0 +1,58 @@
+@import './Root.module.css';
+
+.shoppingPage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid var(--text-primary);
+    min-height: 80vh;
+
+    gap: 2rem;
+    padding: 2%;
+}
+
+.shoppingPage div {
+    border: 1px solid var(--text-primary);
+}
+
+.gallery {
+    width: 80%;
+    height: 1000px;
+}
+
+.productRow {
+    padding: 1%;
+
+    height: 100%;
+    gap: 1rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.product {
+    justify-self: center;
+    width: 100%;
+
+    display: grid;
+    grid-template-rows: 60% 40%;
+}
+
+.productInfo {
+    padding-left: 10%;
+    padding: 5%;
+    gap: 2%;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "info buy";
+}
+
+.productImg {
+    background-color: var(--accent);
+}
+
+.productInfo div {
+    grid-area: buy;
+    width: fit-content;
+    border: none;
+}

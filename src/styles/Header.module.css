@@ -1,0 +1,11 @@
+
+@import './Root.module.css';
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 2%;
+    border: 1px solid var(--text-primary);
+}
