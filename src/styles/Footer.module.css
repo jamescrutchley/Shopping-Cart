@@ -2,9 +2,118 @@
 
 .footer {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
 
-    padding: 2%;
     border: 1px solid var(--background-color);
+}
+
+.promotionContainer {
+    background-color: var(--background);
+    text-align: center;
+    gap: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    height: fit-content;
+    border: 1px solid var(--text-primary)
+}
+
+li {
+    list-style: none;
+}
+
+.nav {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+
+    border: 1px solid var(--text-primary);
+}
+
+.navLinks {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.navLinks div {
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.contact {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+
+    gap: 2rem;
+    align-items: center;
+
+    border: 1px solid var(--text-primary);
+}
+
+.contact div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contact h4 {
+    font-size: 1.3em;
+}
+
+.contact ul {
+    display: flex;
+    padding: 0px 20px 0px 20px;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.legal {
+    padding: 1rem;
+}
+
+.legal ul {
+    justify-content: space-around;
+    display: flex;
+    flex-direction: row;
+}
+
+.legal ul li, .contact ul li {
+    padding: 0px 10px 0px 10px;
+}
+
+
+@media screen and (max-width: 599px) {
+    .nav {
+        display: flex;
+        flex-direction: column;
+    }
+    .nav {
+        padding: 1.5rem 1rem 1rem 1rem;
+    }
+    .contact {
+    }
+    .navLinks {
+        padding-bottom: 0rem;
+    }
+}
+
+@media screen and (min-width: 700px) and (max-width: 959px) {
+
+}
+
+@media screen and (min-width: 960px) {
+
 }

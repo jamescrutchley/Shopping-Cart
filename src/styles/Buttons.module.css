@@ -14,14 +14,24 @@
     cursor: pointer;
 }
 
-.cartButton {
-    width: 2%;
+.cartButton.active::after {
+    position: relative;
+    display: inline-block;
+    content: '★';
+    color: var(--text-secondary);
+    bottom: 40px;
+    height: 1rem;
 }
 
 .addToCart {
-    width: 130%;
-    height: 120%;
+    font-size: 0.8rem;
     background-color: var(--background-color);
     border-radius: 50px;
-    border: 1px var(--accent) solid
+    border: 1px var(--text-primary) solid
+}
+
+.searchCollection {
+    background-color: var(--text-secondary);
+    color: white;
+    border: none;
 }

@@ -1,18 +1,22 @@
 :root {
-    --background: white;
+    --background: #f8f9fa;
     --text-primary: black;
-    --text-secondary: royalblue;
-    --accent: purple;
+    --text-secondary: #59C9A5;
+    --accent: #FFFD98;
   }
   [data-theme='dark'] {
-    --background: black;
-    --text-primary: white;
-    --text-secondary: grey;
-    --accent: darkred;
+    --background: #101a2a;
+    --text-primary: rgb(233, 233, 233);
+    --text-secondary: #59C9A5;
+    --accent: #FFFD98;
   }
 
   *[data-theme='dark'] img {
-    filter: invert(100%);
+    filter: invert(90%);
+  }
+  
+  body {
+    font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   }
   
   button[data-theme='dark'] {

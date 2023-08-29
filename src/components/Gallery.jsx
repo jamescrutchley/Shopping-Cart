@@ -1,9 +1,10 @@
-import Product from "./Product";
+import ProductRow from "./ProductRow";
+import styles from '../styles/ShoppingPage.module.css'
 
 const Gallery = () => {
     return (
-        <section className="gallery">
-            <Product />
+        <section className={styles.gallery}>
+            <ProductRow />
         </section>
     )
 }

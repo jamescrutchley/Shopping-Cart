@@ -1,3 +1,5 @@
+import styles from '../styles/ShoppingPage.module.css'
+import buttonStyles from '../styles/Buttons.module.css'
 
 const Product = () => {
     const mockProductData = {
@@ -8,9 +10,18 @@ const Product = () => {
     }
     
     return (
-        <div className="product">
-            <p>{mockProductData.name}</p>
-            <p>{mockProductData.price}</p>
+        <div className={styles.product}>
+            <div className={styles.productImg}>
+                <img src="" alt="" />
+            </div>
+            <div className={styles.productInfo}>
+                <p>{mockProductData.name}</p>
+                <p>{mockProductData.price}</p>
+                {/* later own component */}
+                <div>
+                    <button className={buttonStyles.addToCart}>Add To Cart</button>
+                </div>
+            </div>
         </div>
     )
 }
