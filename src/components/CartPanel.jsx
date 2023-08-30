@@ -34,7 +34,7 @@ const CartPanel = ({ clickBack }) => {
           Back
         </button>
         <h2>Your Cart</h2>
-        <section>
+        <section className={styles.cartContainer}>
           {cartArray.map((data, index) => (
             <Product key={index} data={data} />
           ))}

@@ -16,7 +16,13 @@
     gap: 1rem;
     align-items: center;
     animation: fadeIn 0.2s ease-in-out;
+
+    overflow-y: scroll;
 }
+
+.searchContainer::-webkit-scrollbar {
+    content: '...'
+  }
 
 .searchContainer * {
     color: var(--text-primary)
@@ -133,4 +139,8 @@ h2 {
     background-color: rgba(0, 0, 0, 0.5); /* Adjust the alpha value (0.5) for transparency */
     z-index: 999; /* Ensure it's above other elements */
     display: flex;
+  }
+
+  .cartContainer {
+    /* overflow-y: scroll; */
   }
