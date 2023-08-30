@@ -6,6 +6,7 @@ import styles from "../styles/Nav.module.css";
 import buttonStyles from "../styles/Buttons.module.css";
 
 import { useState } from "react";
+import CartPanel from "./CartPanel";
 
 const Nav = ({ toggleTheme }) => {
     const [panel, setPanel] = useState(null);
@@ -23,10 +24,11 @@ const Nav = ({ toggleTheme }) => {
         <a href={"/shop"}> Shop</a>
       </div>
       <div className={styles.actionsContainer}>
-        <CartButton />
+        <CartButton onClick={openPanel}/>
         <SearchButton onClick={openPanel} />
       </div>
       {panel === 'search' && <SearchPanel clickBack={openPanel} />}
+      {panel === 'cart' && <CartPanel clickBack={openPanel} />}
     </nav>
   );
 };
