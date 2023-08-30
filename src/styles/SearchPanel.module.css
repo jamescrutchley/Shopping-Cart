@@ -107,8 +107,21 @@ h2 {
     }
   }
 
-  .fade {
+  @keyframes fadeOnly {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+
+  .fade:not(.panelWrapper) {
     animation: fadeOut 0.2s;
+  }
+
+  .fade.panelWrapper {
+    animation: fadeOnly 0.2s;
   }
 
   .panelWrapper {

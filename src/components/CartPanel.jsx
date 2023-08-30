@@ -1,13 +1,14 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import styles from "../styles/SearchPanel.module.css";
 import CartContext from "../context/CartContext";
+import Product from "./Product";
 
 import buttonStyles from "../styles/Buttons.module.css";
 import { useState } from "react";
 
 const CartPanel = ({ clickBack }) => {
   const [fadeOutClass, setFadeOutClass] = useState(null);
-  const [cart] = useState(CartContext);
+  const { cartArray, addToCart } = useContext(CartContext);
 
   const notifyClickBack = () => {
     setFadeOutClass(true);
@@ -16,8 +17,14 @@ const CartPanel = ({ clickBack }) => {
     }, 150);
   };
 
+  useEffect(() => {
+    console.log(cartArray)
+  })
+
   return (
-    <section className={styles.panelWrapper}>
+    <section
+      className={`${styles.panelWrapper} ${fadeOutClass ? styles.fade : ""}`}
+    >
       <div
         className={`${styles.searchContainer} ${
           fadeOutClass ? styles.fade : ""
@@ -27,7 +34,11 @@ const CartPanel = ({ clickBack }) => {
           Back
         </button>
         <h2>Your Cart</h2>
-        <section>{/* your products via context */}</section>
+        <section>
+          {cartArray.map((data, index) => (
+            <Product key={index} data={data} />
+          ))}
+        </section>
       </div>
     </section>
   );

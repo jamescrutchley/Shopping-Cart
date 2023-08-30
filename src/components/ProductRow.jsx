@@ -6,8 +6,8 @@ import CartContext from "../context/CartContext";
 import mockProductList from '../mocks/mockProductList';
 
 const ProductRow = () => {
-  const cartData = useContext(CartContext);
-  const productsToDisplay = mockProductList;
+    const {cartArray, addToCart} = useContext(CartContext);
+    const productsToDisplay = mockProductList;
   const productCount = 10;
 
   // Create an array of product indices
@@ -16,18 +16,16 @@ const ProductRow = () => {
     (_, index) => index
   );
 
-  useEffect(() => {
-
-  })
+  useEffect(() => console.log('cartarray', cartArray))
 
 
   return (
     <>
     <div className={styles.productRow}>
         {productsToDisplay.map((data, index) => {
-            const isInCart = !!cartData.find(item => data.id === item.id);
+            const isInCart = !!cartArray.find(item => data.id === item.id);
     return ( <Product key={index} data={data}
-                isInCart={isInCart} /> )
+                isInCart={isInCart} addToCart={addToCart}/> )
 })}
     </div>
 

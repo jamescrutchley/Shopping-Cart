@@ -6,9 +6,15 @@ import { useContext, useEffect } from "react";
 //implementation - redux/context?
 
 const CartButton = ({ full = false, onClick }) => {
-    const [cartData] = useContext(CartContext)
-  const itemsInCart = Array.from([cartData]).length
+  const { cartArray } = useContext(CartContext);
 
+  const itemsInCart = cartArray.length;
+
+  useEffect(() => {
+    console.log(itemsInCart);
+    console.log("data inside button");
+    console.log(cartArray);
+  }, [cartArray, itemsInCart]);
 
   return (
     <>
@@ -17,7 +23,9 @@ const CartButton = ({ full = false, onClick }) => {
         className={`${styles.cartButton} ${full ? styles.active : ""}`}
       >
         <img src={buttonIcon} alt="shopping-cart" />
-        <p aria-hidden='true' className={styles.cartBadge}>{itemsInCart}</p>
+        <p aria-hidden="true" className={styles.cartBadge}>
+          {itemsInCart}
+        </p>
       </button>
     </>
   );

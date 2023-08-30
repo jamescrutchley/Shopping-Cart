@@ -7,6 +7,10 @@ import { useState } from "react";
 const SearchPanel = ({ clickBack }) => {
   const [fadeOutClass, setFadeOutClass] = useState(null);
 
+  // click 'outside' listener as well
+
+
+
   const notifyClickBack = () => {
     setFadeOutClass(true);
     setTimeout(() => {
@@ -14,7 +18,9 @@ const SearchPanel = ({ clickBack }) => {
     }, 150);
   };
   return (
-    <section className={styles.panelWrapper}>
+    <section className={`${styles.panelWrapper} ${
+        fadeOutClass ? styles.fade : ""
+      }`}>
       <div
         className={`${styles.searchContainer} ${
           fadeOutClass ? styles.fade : ""
