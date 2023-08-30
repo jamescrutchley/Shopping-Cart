@@ -1,11 +1,13 @@
 import { useContext } from "react";
 import styles from "../styles/SearchPanel.module.css";
+import CartContext from "../context/CartContext";
 
 import buttonStyles from "../styles/Buttons.module.css";
 import { useState } from "react";
 
 const CartPanel = ({clickBack}) => {
         const [fadeOutClass, setFadeOutClass] = useState(null);
+        const [cart] = useState(CartContext)
 
         const notifyClickBack = () => {
             setFadeOutClass(true)
