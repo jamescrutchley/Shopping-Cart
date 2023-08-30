@@ -110,3 +110,14 @@ h2 {
   .fade {
     animation: fadeOut 0.2s;
   }
+
+  .panelWrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5); /* Adjust the alpha value (0.5) for transparency */
+    z-index: 999; /* Ensure it's above other elements */
+    display: flex;
+  }

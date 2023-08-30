@@ -35,3 +35,18 @@
     color: white;
     border: none;
 }
+
+.cartBadge {
+    position: relative;
+    bottom: 30px;
+    right: -7px;
+    background-color: var(--accent);
+    border-radius: 10px;
+    width: 15px;
+    height: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: var(--text-primary) 1px solid;
+    font-size: 9px;
+}

@@ -26,8 +26,6 @@ const ProductRow = () => {
     <div className={styles.productRow}>
         {productsToDisplay.map((data, index) => {
             const isInCart = !!cartData.find(item => data.id === item.id);
-            console.log('in cart:');
-            console.log(isInCart);
     return ( <Product key={index} data={data}
                 isInCart={isInCart} /> )
 })}
