@@ -1,6 +1,7 @@
 import styles from "../styles/ShoppingPage.module.css";
 import buttonStyles from "../styles/Buttons.module.css";
 import { useEffect } from "react";
+import ProductControls from "./ProductControls";
 
 const Product = ({data = null, isInCart, addToCart }) => {
 
@@ -19,11 +20,9 @@ const Product = ({data = null, isInCart, addToCart }) => {
       <div className={styles.productInfo}>
         <p>{name ?? '?'}</p>
         <p>{price ?? '?'}</p>
-        <p>{isInCart ? 'true' : 'false'}</p>
         {/* later own component */}
-        <div>
-          <button onClick={() => addToCart(data)}
-          className={buttonStyles.addToCart}>Add To Cart</button>
+        <div className={styles.productControlsContainer}>
+          <ProductControls data={data} addToCart={addToCart} />
         </div>
       </div>
     </article>
