@@ -1,7 +1,8 @@
 import { useContext, useEffect } from "react";
 import styles from "../styles/SearchPanel.module.css";
 import CartContext from "../context/CartContext";
-import Product from "./Product";
+import CartCard from "./CartCard";
+import sumPrice from "../helpers/sumPrice";
 
 import buttonStyles from "../styles/Buttons.module.css";
 import { useState } from "react";
@@ -9,6 +10,7 @@ import { useState } from "react";
 const CartPanel = ({ clickBack }) => {
   const [fadeOutClass, setFadeOutClass] = useState(null);
   const { cartArray, addToCart } = useContext(CartContext);
+  const shippingPrice = Math.round(Math.random() * 10)
 
   const notifyClickBack = () => {
     setFadeOutClass(true);
@@ -18,15 +20,15 @@ const CartPanel = ({ clickBack }) => {
   };
 
   useEffect(() => {
-    console.log(cartArray)
-  })
+    console.log(cartArray);
+  });
 
   return (
     <section
       className={`${styles.panelWrapper} ${fadeOutClass ? styles.fade : ""}`}
     >
       <div
-        className={`${styles.searchContainer} ${
+        className={`${styles.cart} ${styles.searchContainer} ${
           fadeOutClass ? styles.fade : ""
         }`}
       >
@@ -34,11 +36,27 @@ const CartPanel = ({ clickBack }) => {
           Back
         </button>
         <h2>Your Cart</h2>
+        <div className={styles.cartWrapper}>
         <section className={styles.cartContainer}>
           {cartArray.map((data, index) => (
-            <Product key={index} data={data} />
+            <CartCard key={index} data={data} />
           ))}
         </section>
+        <section className={styles.orderSummaryContainer}>
+          <div>
+            <p>Subtotal</p>
+            <p>${sumPrice(...cartArray.map((item) => item.price))}</p>
+          </div>
+          <div>
+            <p>Shipping</p>
+            <p>${shippingPrice}.00</p>
+          </div>
+          <div>
+            <p>Total</p>
+            <p>${sumPrice(...cartArray.map((item) => item.price)) + shippingPrice}</p>
+          </div>
+        </section>
+        </div>
       </div>
     </section>
   );

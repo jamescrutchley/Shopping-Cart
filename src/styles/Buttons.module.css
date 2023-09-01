@@ -25,9 +25,6 @@
 
 .addToCart {
     font-size: 0.8rem;
-    background-color: var(--background-color);
-    border-radius: 50px;
-    border: 1px var(--text-primary) solid
 }
 
 .searchCollection {
@@ -49,4 +46,44 @@
     justify-content: center;
     border: var(--text-primary) 1px solid;
     font-size: 9px;
+}
+
+
+.productControls {
+    font-size: 12px;
+    border: 1px solid black;
+}
+
+.quantityControls {
+    padding: 5px;
+    grid-area: input;
+    background-color: var(--background);
+    
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "label input";
+}
+
+.quantityControls * {
+    background-color: var(--background);
+}
+
+.quantityControls input {
+    grid-area: input;
+    max-width: 40px;
+}
+
+.addToCartContainer {
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+}
+
+.quantityControls label {
+    grid-area: label;
+}
+
+button:hover {
+transform: scale(1.1);
 }

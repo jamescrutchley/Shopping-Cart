@@ -45,11 +45,18 @@ h2 {
     border: 2px solid salmon;
 }
 
-.productInfo {
 
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-areas: "info buy";
+.productInfo p:first-child {
+    grid-area: info;
+}
+
+.productInfo p:last-child {
+    grid-area: info;
+}
+
+
+.productControlsContainer {
+    grid-area: buy;
 }
 
 .productImg {
