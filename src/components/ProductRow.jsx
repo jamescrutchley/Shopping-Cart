@@ -1,33 +1,41 @@
 import Product from "./Product";
 import styles from "../styles/ShoppingPage.module.css";
-import { useContext, useEffect } from "react";
+import { useContext, useEffect, useState } from "react";
 import CartContext from "../context/CartContext";
+import useFetch from "../hooks/useFetch";
 
 import mockProductList from '../mocks/mockProductList';
+import { fakeStore } from "../mocks/copiedObj";
 
 const ProductRow = () => {
     const {cartArray, addToCart} = useContext(CartContext);
     const productsToDisplay = mockProductList;
-  const productCount = 10;
+    const { data: products, loading, error } = useFetch('https://fakestoreapi.com/products?limit=10')
+    // const [products, setProducts]= useState(fakeStore);
 
-  // Create an array of product indices
-  const productIndices = Array.from(
-    { length: productCount },
-    (_, index) => index
-  );
-
-  useEffect(() => console.log('cartarray', cartArray))
-
+  useEffect(() => console.log(Array.isArray(products), 'is an array??'))
 
   return (
     <>
-    <div className={styles.productRow}>
+    {Array.isArray(products) && products.map((product, index) => {
+            const isInCart = !!cartArray.find(item => product.id === item.id);
+           return <Product key={index} data={product} isInCart={isInCart} addToCart={addToCart} />
+    })}
+          {/* { loading && <p>{loading}</p> }
+      { products && 
+      {products.map((item, index) => {
+                    const isInCart = !!cartArray.find(item => data.id === item.id);
+
+        <Product key={index} data={item} isInCart={isInCart} addToCart={addToCart} />
+      })} }
+      { error && <p>{error}</p> } */}
+    {/* <div className={styles.productRow}>
         {productsToDisplay.map((data, index) => {
             const isInCart = !!cartArray.find(item => data.id === item.id);
     return ( <Product key={index} data={data}
                 isInCart={isInCart} addToCart={addToCart}/> )
 })}
-    </div>
+    </div> */}
 
 
       {/* <div className={styles.productRow}>
