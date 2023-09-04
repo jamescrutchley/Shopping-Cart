@@ -1,6 +1,8 @@
 import styles from "../styles/Buttons.module.css";
+import { useState } from "react";
 
 const productControls = ({addToCart = null, data = null}) => {
+    const [inCart, setInCart] = useState(true);
     //render differently if already in cart. Possibly 'remove' button.
     //or not at all. different component?
   return (
@@ -13,6 +15,7 @@ const productControls = ({addToCart = null, data = null}) => {
         <button onClick={() => addToCart(data)}
         className={styles.addToCart}>Add To Cart</button>
       </div>
+      {inCart && <div className={styles.removeFromCartButton}>Remove</div>}
 
     </div>
   );

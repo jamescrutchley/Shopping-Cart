@@ -6,7 +6,7 @@ import ProductControls from './ProductControls'
 const Header = () => {
     return (
         <header className={styles.header}>
-            <h1>Product Store</h1>
+            <h1>Consumer Goods</h1>
         </header>
     )
 }

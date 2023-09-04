@@ -1,89 +1,116 @@
-@import './Root.module.css';
+@import "./Root.module.css";
 
 * {
-    color: var(--text-primary);
-    background-color: none;
+  color: var(--text-primary);
+  background-color: none;
 }
 
-.searchButton, .cartButton, .addToCart, .toggleTheme {
-    background: none;
-    border: none;
+.searchButton,
+.cartButton,
+.addToCart,
+.toggleTheme {
+  background: none;
+  border: none;
 }
 
-.searchButton:hover, .cartButton:hover, .addToCart:hover, .toggleTheme:hover {
-    cursor: pointer;
+.searchButton:hover,
+.cartButton:hover,
+.addToCart:hover,
+.toggleTheme:hover {
+  cursor: pointer;
 }
 
 .cartButton.active::after {
-    position: relative;
-    display: inline-block;
-    content: '★';
-    color: var(--text-secondary);
-    bottom: 40px;
-    height: 1rem;
+  position: relative;
+  display: inline-block;
+  content: "★";
+  color: var(--text-secondary);
+  bottom: 40px;
+  height: 1rem;
 }
 
 .addToCart {
-    font-size: 0.8rem;
+    border-radius: 4px;
+  font-size: 0.8rem;
+  background-color: var(--text-secondary);
+  color: var(--background);
+  padding: 2px 4px 2px 4px;
+  margin: 8px;
 }
 
 .searchCollection {
-    background-color: var(--text-secondary);
-    color: white;
-    border: none;
+  background-color: var(--text-secondary);
+  color: white;
+  border: none;
 }
 
 .cartBadge {
-    position: relative;
-    bottom: 30px;
-    right: -7px;
-    background-color: var(--accent);
-    border-radius: 10px;
-    width: 15px;
-    height: 15px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: var(--text-primary) 1px solid;
-    font-size: 9px;
+  position: relative;
+  bottom: 30px;
+  right: -7px;
+  background-color: var(--accent);
+  border-radius: 10px;
+  width: 15px;
+  height: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: var(--text-primary) 1px solid;
+  font-size: 9px;
 }
 
-
 .productControls {
-    font-size: 12px;
-    border: 1px solid black;
+  font-size: 12px;
+  margin-top: 4px;
 }
 
 .quantityControls {
-    padding: 5px;
-    grid-area: input;
-    background-color: var(--background);
-    
-
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-areas: "label input";
+  padding: 4px 4px 8px 4px                  ;
+  grid-area: input;
+  background-color: var(--background);
+  gap: 4px;
+  display: grid;
+  justify-content: center;
+  grid-template-rows: auto 1fr;
+  grid-template-areas: 
+  "label"
+  "input";
 }
 
 .quantityControls * {
-    background-color: var(--background);
+  background-color: var(--background);
 }
 
 .quantityControls input {
-    grid-area: input;
-    max-width: 40px;
+  grid-area: input;
+  max-width: 40px;
+  width: clamp(34px, 36px, 40px);
+  padding: 2px 0px 2px 2px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .addToCartContainer {
-    display: flex;
-    align-items: stretch;
-    justify-content: center;
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
 }
 
 .quantityControls label {
-    grid-area: label;
+  grid-area: label;
 }
 
 button:hover {
-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+.removeFromCartButton {
+  background-color: red;
+  font-size: 0.8rem;
+  color: var(--background);
+  padding: 2px 4px 2px 4px;
+  margin: 8px;
+  border-radius: 4px;
 }

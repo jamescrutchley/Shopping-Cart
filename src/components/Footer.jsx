@@ -41,6 +41,7 @@ const Footer = () => {
             </ul>
           </div>
         </div>
+        <div className={styles.divider}></div>
         <div className={styles.contact}>
           <div className={styles.contactInfo}>
             <h4>Get In Touch</h4>

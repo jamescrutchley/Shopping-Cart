@@ -5,8 +5,12 @@
     flex-direction: column;
     min-height: 80vh;
 
-    gap: 20px;
     padding: 20px;
+    background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.03), /* Black with opacity */
+        rgba(255, 255, 255, 0.2) /* White with opacity */
+      );
 }
 
 h2 {
@@ -15,116 +19,47 @@ h2 {
 
 .gallery {
     display: grid;
-    flex-basis: 0;
-    flex: 1;
-    padding: 10px;
+    grid-auto-flow: dense;
+    padding: 0px 8px 8px 8px;
 
-    gap: 40px;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr ) );
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr ) );
 
 }
 
 
-.product {
+.showingItemsContainer {
+    align-self: center;
     justify-self: center;
+    color: var(--text-primary);
+    opacity: 0.5;
+}
+
+
+ .nameSpan {
+    color: var(--text-secondary)
+ }
+
+ .sortByContainer {
+    width: fit-content;
     display: flex;
-    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    margin-right: 32px;
+    margin-top: 32px;
+    padding: 8px;
+    border: var(--text-primary) 2px solid;
+    align-self: flex-end;
+    justify-self: flex-start;
+}
 
-    background-color: rgba(119, 136, 153, 0.249);
+.sortByContainer label {
+    padding-right: 4px;
+}
+
+.sortByContainer select {
+    padding: 4px;
+    color: var(--text-primary);
+    opacity: 0.8;
 }
 
 
-.productInfo p:first-child {
-    grid-area: info;
-}
-
-.productInfo p:last-child {
-    grid-area: info;
-}
-
-
-.productControlsContainer {
-    grid-area: buy;
-}
-
-
-.productInfo div {
-    grid-area: buy;
-    border: none;
-}
-
-.imgOverlay {
-    z-index: 0;
-    position: relative;
-    width: 90%;
-    margin: auto;
-    overflow: hidden;
-}
-
-.imgOverlay .decoration {
-    background: rgba(0,0,0,0.7);
-    position: absolute;
-    height: 99%;
-    width: 100%;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    opacity: 0;
-    -webkit-transition: all 0.4s ease-in-out 0s;
-    -moz-transition: all 0.4s ease-in-out 0s;
-    transition: all 0.4s ease-in-out 0s;
-}
-
-.imgOverlay:hover, .contentDecoration {
-    opacity: 1;
-}
-
-.descriptionContainer {
-    position: absolute;
-    text-align: center;
-    padding-left: 1em;
-    padding-right: 1em;
-    width: 100%;
-    top: 50%;
-    left: 50%;
-    opacity: 0;
-    -webkit-transform: translate(-50%, -50%);
-    -moz-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-    -webkit-transition: all 0.3s ease-in-out 0s;
-    -moz-transition: all 0.3s ease-in-out 0s;
-    transition: all 0.3s ease-in-out 0s;
-}
-
-
-.imgOverlay:hover .descriptionContainer{
-    top: 50%;
-    left: 50%;
-    opacity: 1;
-  }
-
-
-@media screen and (max-width: 599px) {
-    .image {
-        max-width: 180px;
-        max-height: 120px;
-      }
-  }
-  
-  @media screen and (min-width: 700px) and (max-width: 959px) {
-    .image {
-        max-width: 300px;
-        max-height: 200px;
-      }
-  }
-  
-  @media screen and (min-width: 960px) {
-    .image {
-        max-width: 420px;
-        max-height: 280px;
-      }
-  }
-
- 

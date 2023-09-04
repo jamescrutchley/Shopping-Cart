@@ -1,36 +1,41 @@
-import styles from "../styles/ShoppingPage.module.css";
+import styles from "../styles/Product.module.css";
 import buttonStyles from "../styles/Buttons.module.css";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import ProductControls from "./ProductControls";
+import ImagePanel from './ImagePanel'
 
 const Product = ({ data = null, isInCart, addToCart }) => {
   const { title, price, image, description } = data || {};
+  const [expand, setExpand] = useState(null);
 
   useEffect(() => console.log(isInCart));
 
+  const expandImage = () => {
+    setExpand(expand ? null : true);
+}
+
   return (
     <article className={`${styles.product} ${isInCart ? styles.isInCart : ""}`}>
-      <a href="">
+        {expand && <ImagePanel img={image} clickBack={expandImage}/>}
+      <a onClick={() => expandImage()}>
         <div className={styles.productImg}>
 
           <div className={styles.imgOverlay}>
             <img className={styles.image} src={image} alt="" />
-            <div className={styles.descriptionContainer}>
-              <p>{description}</p>
-            </div>
             <div className={styles.decoration}></div>
           </div>
 
         </div>
       </a>
-
+      <div className={styles.productControlsContainer}>
+          <ProductControls data={data} addToCart={addToCart} />
+      </div>
       <div className={styles.productInfo}>
         <p>{title ?? "?"}</p>
-        <p>{price ?? "?"}</p>
+        <p>${price ?? "?"} AUD</p>
+        <p className={styles.productDescription}>{description}</p>
         {/* later own component */}
-        <div className={styles.productControlsContainer}>
-          <ProductControls data={data} addToCart={addToCart} />
-        </div>
+        
       </div>
     </article>
   );

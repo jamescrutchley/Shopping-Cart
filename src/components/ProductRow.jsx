@@ -10,8 +10,8 @@ import { fakeStore } from "../mocks/copiedObj";
 const ProductRow = () => {
     const {cartArray, addToCart} = useContext(CartContext);
     const productsToDisplay = mockProductList;
-    const { data: products, loading, error } = useFetch('https://fakestoreapi.com/products?limit=10')
-    // const [products, setProducts]= useState(fakeStore);
+    // const { data: products, loading, error } = useFetch('https://fakestoreapi.com/products?limit=10')
+    const [products, setProducts]= useState(fakeStore);
 
   useEffect(() => console.log(Array.isArray(products), 'is an array??'))
 
@@ -50,6 +50,9 @@ const ProductRow = () => {
           return <Product key={index} data={data} />
 })}
       </div> */}
+      <div className={styles.showingItemsContainer}>
+        <p>Showing {products.length} of {products.length} items</p>
+      </div>
     </>
   );
 };

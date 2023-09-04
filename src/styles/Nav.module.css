@@ -1,6 +1,7 @@
 @import './Root.module.css';
 
 .nav {
+    z-index: 200;
 
     position: sticky;
     top: 0;
@@ -17,16 +18,39 @@
 }
 
 .nav a {
+    box-sizing: border-box;
+    display: flex;
     color: var(--primary-color);
     text-decoration: none;
+    height: 40px;
+    padding: 8px;
+    margin: 0;
+    align-items: center;
+    justify-content: center;
+    transition: background-color font-weight 1s;
+    line-height: 1;
+}
+
+.currentPage {
+    background-color: var(--text-secondary);
+    font-weight: bold;
 }
 
 .nav a:hover {
-    text-decoration: underline;
+    transition: background-color 0.5s;
+    background-color: var(--text-secondary);
+    font-weight: bold;
+    color: var(--text-primary);
 }
+
+a:hover  a {
+    background-color: var(--text-secondary);
+}
+
 
 .pageLinks {
     display: flex;
+    justify-content: space-between;
     gap: 1rem;
 }
 

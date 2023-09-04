@@ -4,8 +4,10 @@ import SearchButton from "./SearchButton"
 import ToggleTheme from "./ToggleTheme";
 import styles from "../styles/Nav.module.css";
 import buttonStyles from "../styles/Buttons.module.css";
+import { useLocation } from "react-router-dom";
 
-import { useState } from "react";
+
+import { useEffect, useState } from "react";
 import CartPanel from "./CartPanel";
 
 const Nav = ({ toggleTheme }) => {
@@ -15,13 +17,16 @@ const Nav = ({ toggleTheme }) => {
         setPanel(where);
     }
 
+    const currentPage = useLocation();
+    useEffect(() => console.log(currentPage))
+
   return (
     <nav className={styles.nav}>
       <ToggleTheme className={buttonStyles.toggleTheme} onClick={toggleTheme} />
 
       <div className={styles.pageLinks}>
-        <a href={"/about"}>About</a>
-        <a href={"/shop"}> Shop</a>
+        <a href={"/about"} className={currentPage.pathname === '/about' ? styles.currentPage : null}>About</a>
+        <a href={"/shop"} className={currentPage.pathname === '/shop' ? styles.currentPage : null}> Shop</a>
       </div>
       <div className={styles.actionsContainer}>
         <CartButton onClick={openPanel}/>

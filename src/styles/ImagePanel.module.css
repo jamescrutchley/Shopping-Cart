@@ -1,0 +1,39 @@
+@import './Root.module.css';
+
+
+.panelWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.8); /* Adjust the alpha value (0.5) for transparency */
+    z-index: 9999; /* Ensure it's above other elements */
+    display: flex;
+}
+
+.imagePanelContainer { 
+    background-color: transparent;
+    max-height: 80vh;
+    max-width: 80vw;
+    cursor:-moz-zoom-out;
+    cursor: zoom-out;
+}
+
+.closeButton {
+    position: absolute;
+    font-size: 2rem;
+    width: 40px;
+    height: 40px;
+    top: 2vh;
+    left: 2vh;
+}
+
+.image {
+    max-width: 50vw;
+    max-height: 80vh;
+    border-radius: 8px;
+}
