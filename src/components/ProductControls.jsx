@@ -1,24 +1,49 @@
 import styles from "../styles/Buttons.module.css";
-import { useState } from "react";
+import { useState, useContext, useEffect } from "react";
+import QuantityControls from "./QuantityControls";
 
-const productControls = ({addToCart = null, data = null}) => {
-    const [inCart, setInCart] = useState(true);
-    //render differently if already in cart. Possibly 'remove' button.
-    //or not at all. different component?
+import CartContext from "../context/CartContext";
+
+const ProductControls = ({ data = null }) => {
+  const { cartArray, addToCart } = useContext(CartContext);
+  const [inCart, setInCart] = useState(null);
+  const [userQuantitySelection, setUserQuantitySelection] = useState(null);
+
+  useEffect(() => {
+    if (data) {
+      const foundItem = cartArray.find((item) => item.id === data.id);
+      if (foundItem !== undefined) {
+        console.log("found item", foundItem.quantity);
+        setInCart(foundItem ? foundItem.quantity : null);
+      }
+    }
+  }, [cartArray, data, inCart]);
+
+  const onQuantityChange = (value) => {
+    setUserQuantitySelection(value);
+  }
+
   return (
     <div className={styles.productControls}>
-      <div className={styles.quantityControls}>
-        <label htmlFor="quantity">Qty:</label>
-        <input name="quantity" type="number" defaultValue="1" min={1} />
-      </div>
+      <QuantityControls inCart={inCart} onChange={onQuantityChange}/>
       <div className={styles.addToCartContainer}>
-        <button onClick={() => addToCart(data)}
-        className={styles.addToCart}>Add To Cart</button>
+        {!!inCart && <button onClick={() => addToCart(data, userQuantitySelection)} className={styles.addToCart}> Update Cart</button>}
+        {!!inCart || (
+          <button onClick={() => addToCart(data, userQuantitySelection)} className={styles.addToCart}>
+            Add To Cart
+          </button>
+        )}
       </div>
-      {inCart && <div className={styles.removeFromCartButton}>Remove</div>}
-
+      {/* visual queue for remove button */}
+      <div
+        className={`${styles.removeFromCartButton} ${
+          inCart ? "enabled" : "disabled"
+        }`}
+      >
+        Remove
+      </div>
     </div>
   );
 };
 
-export default productControls;
+export default ProductControls;

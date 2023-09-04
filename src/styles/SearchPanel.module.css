@@ -76,6 +76,7 @@
 
 h2 {
     font-size: 2rem;
+    order: -1;
 }
 
 .back {
@@ -148,6 +149,7 @@ h2 {
     display: grid;
     gap: 8px;
     width: auto;
+    min-width: 300px;
   }
 
   .cartContainer, .cartContainer * {
@@ -177,7 +179,7 @@ h2 {
     width: auto;
     display: grid;
     grid-template-columns: 1.2fr 3fr 1.2fr 1.2fr;
-    grid-template-areas: ". . cost .";
+    grid-template-areas: ". . . cost";
     justify-content: space-around;
     align-items: stretch;
  }
@@ -192,30 +194,86 @@ h2 {
     text-align: center;
  }
 
+
+
+  
+
+  .cartWrapper {
+    width: 100%;
+    background-color: rgb(240, 240, 240);
+  }
+
+  .cartHeaders {
+    background-color: rgb(240, 240, 240) ;
+    text-transform: uppercase;
+
+    display: grid;
+    grid-template-columns: 2fr 0.9fr 0.6fr 1fr;
+    grid-template-areas: "item price quantity total";
+    justify-content: flex-end;
+
+    flex-direction: row;
+    animation: fadeIn 0.2s ease-in-out;
+
+    width: 100%;
+    min-width: 300px;
+  }
+
+  .cartHeaders {
+    width: 100%;
+  }
+  .cartHeaders p:last-child {
+    justify-self: center;
+  }
+
+  .cartHeaders p:first-child {
+    justify-self: center;
+  }
+
+
+  @media screen and (max-width: 580px) {
+
+    .cartHeaders {
+        display: grid;
+        grid-template-columns: 6fr 2fr 2fr;
+        grid-template-areas: "item price total";
+        padding-right: 40px;
+    }
+
+    .quantity {
+        display: none;
+    }
+
+    .price {
+        grid-area: price;
+    }
+
+    .cartHeaders p:first-child {
+        grid-area: item;
+    }
+
+    .cartHeaders p:last-child {
+        grid-area: total;
+    }
+ }
  
 @media screen and (max-width: 768px) {
     .searchContainer {
         width: 90vw;
     }
     .cart {
-        width: clamp(60vw, 80vw, 92vw);
+        width: clamp(80vw, 90vw, 100vw);
     }
   }
   
   @media screen and (min-width: 769px) and (max-width: 1024px) {
     .searchContainer {
-      width: 60vw; /* Adjust container width for tablets */
+      width: 80vw; /* Adjust container width for tablets */
     }
   }
   
   @media screen and (min-width: 1025px) {
     .searchContainer {
-        width: 50vw;
+        width: 70vw;
     }
-  }
-  
-
-  .cartWrapper {
-    width: 90%;
-    background-color: rgb(240, 240, 240);
   }

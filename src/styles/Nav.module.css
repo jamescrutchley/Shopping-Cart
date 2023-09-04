@@ -49,9 +49,15 @@ a:hover  a {
 
 
 .pageLinks {
+    position: relative;
     display: flex;
     justify-content: space-between;
-    gap: 1rem;
+    gap: 20px;
+}
+
+.pageLinks a {
+    width: 60px;
+    position: relative;
 }
 
 .actionsContainer {

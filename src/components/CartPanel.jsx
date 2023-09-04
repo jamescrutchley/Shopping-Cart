@@ -35,6 +35,12 @@ const CartPanel = ({ clickBack }) => {
         <button onClick={() => notifyClickBack()} className={styles.back}>
           Back
         </button>
+        <div className={styles.cartHeaders}>
+            <p>Item</p>
+            <p className={styles.price}>Price</p>
+            <p className={styles.quantity}>Quantity</p>
+            <p>Total</p>
+        </div>
         <h2>Your Cart</h2>
         <div className={styles.cartWrapper}>
         <section className={styles.cartContainer}>
@@ -53,7 +59,7 @@ const CartPanel = ({ clickBack }) => {
           </div>
           <div>
             <p>Total</p>
-            <p>${sumPrice(...cartArray.map((item) => item.price)) + shippingPrice}</p>
+            <p>${sumPrice(...cartArray.map((item) => item.price * item.quantity)) + shippingPrice}</p>
           </div>
         </section>
         </div>

@@ -8,6 +8,7 @@ import mockProductList from '../mocks/mockProductList';
 import { fakeStore } from "../mocks/copiedObj";
 
 const ProductRow = () => {
+    // any reason to have context this high up? why pass it along?
     const {cartArray, addToCart} = useContext(CartContext);
     const productsToDisplay = mockProductList;
     // const { data: products, loading, error } = useFetch('https://fakestoreapi.com/products?limit=10')
