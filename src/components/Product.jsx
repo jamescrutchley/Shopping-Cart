@@ -8,7 +8,6 @@ const Product = ({ data = null, isInCart, addToCart }) => {
   const { title, price, image, description } = data || {};
   const [expand, setExpand] = useState(null);
 
-  useEffect(() => console.log(isInCart));
 
   const expandImage = () => {
     setExpand(expand ? null : true);

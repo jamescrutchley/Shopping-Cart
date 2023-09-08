@@ -3,11 +3,11 @@ import { useEffect, useState } from "react";
 import ClickableInput from "./ClickableInput";
 
 const QuantityControls = ({ inCart = null, onChange = null }) => {
-  const [quantity, setQuantity] = useState(1);
-  const [valid, setValid] = useState(true);
+  const [quantity, setQuantity] = useState(inCart || 1);
 
   useEffect(() => {
     if (inCart !== null) {
+        console.log(inCart);
       setQuantity(inCart);
     }
   }, [inCart]);

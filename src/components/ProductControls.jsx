@@ -11,11 +11,8 @@ const ProductControls = ({ data = null, isInCart = null }) => {
 
   useEffect(() => {
     if (data) {
-      const foundItem = cartArray.find((item) => item.id === data.id);
-      if (foundItem !== undefined) {
-        console.log("found item", foundItem.quantity);
-        setInCart(foundItem ? foundItem.quantity : null);
-      }
+        const foundItem = cartArray.find((item) => item.id === data.id);
+        setInCart(foundItem ? foundItem.quantity : null);        
     }
   }, [cartArray, data, inCart]);
 
@@ -25,7 +22,7 @@ const ProductControls = ({ data = null, isInCart = null }) => {
 
   return (
     <div className={styles.productControls}>
-      <QuantityControls inCart={inCart} onChange={onQuantityChange}/>
+      <QuantityControls key={inCart} inCart={inCart} onChange={onQuantityChange}/>
       <div className={styles.addToCartContainer}>
         {!!inCart && <button onClick={() => addToCart(data, userQuantitySelection)} className={styles.addToCart}> Update Cart</button>}
         {!!inCart || (
