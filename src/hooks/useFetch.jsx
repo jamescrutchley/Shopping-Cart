@@ -14,8 +14,6 @@ const useFetch = (url) => {
     axios
       .get(url, { cancelToken: source.token, mode: "cors" })
       .then((res) => {
-        console.log(res.data, '(res.data)');
-        console.log(Array.isArray(res.data))
         setLoading(false);
         //checking for multiple responses for more flexibility
         //with the url we send in.

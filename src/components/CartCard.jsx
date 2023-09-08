@@ -3,6 +3,7 @@ import buttonStyles from "../styles/Buttons.module.css";
 import { useEffect } from "react";
 import ProductControls from "./ProductControls";
 import QuantityControls from "./QuantityControls";
+import { DollarCents } from "../helpers/DollarCents";
 
 const CartCard = ({ data = null }) => {
   const { title, price, quantity, image } = data || {};
@@ -17,11 +18,11 @@ const CartCard = ({ data = null }) => {
           <p>{title ?? ""}</p>
         </div>
         <div className={styles.priceContainer}>
-          <p>${price}</p>
+          <p>{DollarCents(price)}</p>
         </div>
         <QuantityControls className={styles.quantityControls} inCart={quantity} />
         <div className={styles.priceTotalContainer}>
-          <p>${price * quantity}</p>
+          <p>{DollarCents(price * quantity)}</p>
         </div>
         <div className={styles.productControlsContainer}></div>
       </div>

@@ -1,9 +1,9 @@
 import CartContext from "./CartContext";
 import { useEffect, useState } from "react";
-import mockData from "../mocks/mockdata.json";
+// import mockData from "../mocks/mockdata.json";
 
 function CartProvider({ children }) {
-  const [cartArray, setCartArray] = useState(mockData);
+  const [cartArray, setCartArray] = useState([]);
 
   const addToCart = (product, quant = null) => {
     const index = cartArray.findIndex((item) => item.id === product.id);

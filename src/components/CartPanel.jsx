@@ -3,6 +3,7 @@ import styles from "../styles/SearchPanel.module.css";
 import CartContext from "../context/CartContext";
 import CartCard from "./CartCard";
 import sumPrice from "../helpers/sumPrice";
+import { DollarCents } from "../helpers/DollarCents";
 
 import buttonStyles from "../styles/Buttons.module.css";
 import { useState } from "react";
@@ -51,15 +52,15 @@ const CartPanel = ({ clickBack }) => {
         <section className={styles.orderSummaryContainer}>
           <div>
             <p>Subtotal</p>
-            <p>${sumPrice(...cartArray.map((item) => item.price))}</p>
+            <p>{sumPrice(...cartArray.map((item) => item.price))}</p>
           </div>
           <div>
             <p>Shipping</p>
-            <p>${shippingPrice}.00</p>
+            <p>{DollarCents(shippingPrice)}</p>
           </div>
           <div>
             <p>Total</p>
-            <p>${sumPrice(...cartArray.map((item) => item.price * item.quantity)) + shippingPrice}</p>
+            <p>{DollarCents(sumPrice(...cartArray.map((item) => item.price * item.quantity)) + shippingPrice)}</p>
           </div>
         </section>
         </div>

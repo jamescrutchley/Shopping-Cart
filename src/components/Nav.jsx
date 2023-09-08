@@ -18,7 +18,6 @@ const Nav = ({ toggleTheme }) => {
     }
 
     const currentPage = useLocation();
-    useEffect(() => console.log(currentPage))
 
   return (
     <nav className={styles.nav}>

@@ -11,9 +11,6 @@ const CartButton = ({ full = false, onClick }) => {
   const itemsInCart = cartArray.length;
 
   useEffect(() => {
-    console.log(itemsInCart);
-    console.log("data inside button");
-    console.log(cartArray);
   }, [cartArray, itemsInCart]);
 
   return (

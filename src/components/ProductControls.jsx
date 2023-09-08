@@ -4,9 +4,9 @@ import QuantityControls from "./QuantityControls";
 
 import CartContext from "../context/CartContext";
 
-const ProductControls = ({ data = null }) => {
+const ProductControls = ({ data = null, isInCart = null }) => {
   const { cartArray, addToCart } = useContext(CartContext);
-  const [inCart, setInCart] = useState(null);
+  const [inCart, setInCart] = useState(isInCart);
   const [userQuantitySelection, setUserQuantitySelection] = useState(null);
 
   useEffect(() => {

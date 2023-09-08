@@ -9,7 +9,6 @@ import CartProvider from "./context/CartProvider.jsx";
 ReactDOM.createRoot(document.getElementById("root")).render(
   <CartProvider>
     <React.StrictMode>
-        <CartProvider />
       <Router />
     </React.StrictMode>
   </CartProvider>
