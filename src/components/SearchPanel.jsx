@@ -2,13 +2,18 @@ import styles from "../styles/SearchPanel.module.css";
 import SearchButton from "./SearchButton";
 import searchIcon from "../assets/icons/search.svg";
 import buttonStyles from "../styles/Buttons.module.css";
-import { useState } from "react";
+import { useState, useRef } from "react";
+import {useClickAway} from 'react-use';
+
 
 const SearchPanel = ({ clickBack }) => {
   const [fadeOutClass, setFadeOutClass] = useState(null);
-
+  const ref = useRef(null);
   // click 'outside' listener as well
 
+  useClickAway(ref, () => {
+    notifyClickBack();
+  });
 
 
   const notifyClickBack = () => {
@@ -21,7 +26,7 @@ const SearchPanel = ({ clickBack }) => {
     <section className={`${styles.panelWrapper} ${
         fadeOutClass ? styles.fade : ""
       }`}>
-      <div
+      <div ref={ref}
         className={`${styles.searchContainer} ${
           fadeOutClass ? styles.fade : ""
         }`}
