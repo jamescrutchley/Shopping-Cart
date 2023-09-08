@@ -24,6 +24,7 @@
     grid-template-columns: 2fr 1fr 2fr 1fr;
     grid-template-areas: "title price qty total";
     align-items: center;
+    padding-right: 16px;
 }
 
 .titleContainer {
@@ -47,7 +48,13 @@
 
 .priceTotalContainer {
     grid-area: total;
+    
 }
+
+.priceTotalContainer p {
+    text-align: right;
+}
+
 
 .priceContainer {
     grid-area: price

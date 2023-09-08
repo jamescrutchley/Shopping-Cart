@@ -191,7 +191,7 @@ h2 {
 
  .orderSummaryContainer div p:last-child {
     grid-area: cost;
-    text-align: center;
+    text-align: right;
  }
 
 
@@ -223,7 +223,8 @@ h2 {
     width: 100%;
   }
   .cartHeaders p:last-child {
-    justify-self: center;
+    justify-self: flex-end;
+    margin-right: 16px;
   }
 
   .cartHeaders p:first-child {
