@@ -1,9 +1,9 @@
 import About from "../components/About";
+import CartContext from "../context/CartContext";
 
 const AboutPage = () => {
     return (
         <section>
-            <h2>This is the About Page.</h2>
             <About /> 
         </section>
     )

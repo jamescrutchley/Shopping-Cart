@@ -1,0 +1,91 @@
+@import './Root.module.css';
+
+* {
+    font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    gap: 32px;
+    padding-left: 16px;
+    padding-right: 16px;
+    background: linear-gradient(to bottom, var(--background), #FFFFFF);
+}
+
+.panel {
+    margin-right: 32px;
+    margin-left: 32px;
+    padding: 32px;
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    grid-template-areas: "img text";
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+}
+
+.panel:nth-child(odd) {
+    background-color: var(--background);
+}
+
+.panel:nth-child(2) .image {
+    width: 150px;
+    margin-bottom: 32px;
+    justify-self: center;
+}
+
+.panel:last-child {
+    margin-bottom: 32px;
+    border-bottom: 2px solid var(--text-primary);
+}
+
+.heading {
+    text-align: center;
+    text-transform: capitalize;
+    text-decoration: underline var(--text-secondary);
+    text-underline-offset: 16px;
+}
+
+.textContainer {
+    grid-area: text;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding: 16px;
+}
+
+.copy {
+    text-align: center;
+    line-break: loose;
+    line-height: 175%;
+}
+
+.image {
+    grid-area: img;
+    width: 340px;
+}
+
+
+
+
+@media screen and (max-width: 799px) {
+
+    .heading {
+        font-size: 22px;
+    }
+    .container {
+        font-size: 14px;
+    }
+    .panel {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 16px;
+    }
+    .image {
+        max-width: 80vw;
+    }
+  }
