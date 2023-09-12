@@ -1,0 +1,47 @@
+@import './Root.module.css';
+
+
+.searchButton {
+    border: var(--text-primary) 1px solid;
+    cursor: pointer;
+    transition: background 0.2s;
+    padding: -32px;
+}
+
+.searchButton:active {
+    transform: scale(1.2);
+}
+
+.searchButton:hover {
+    background: var(--text-secondary);
+}
+
+.searchInput {
+    padding: 4px;
+    animation: ease-in slideUp 0.3s;
+}
+
+
+@keyframes slideUp {
+    0% {
+        transform: scaleY(0);
+    }
+    100% {
+        transform: scaleY(1);
+    }
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+.searchContainer {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+}
+

@@ -66,9 +66,9 @@ a:hover  a {
     display: flex;
     align-self: flex-end;
     justify-self: flex-end;
-    gap: 8px;
+    gap: clamp(12px, 24px, 32px);
 
-    width: 15%;
+    width: fit-content;
     justify-content: flex-end;
     align-items: flex-start;
 }
