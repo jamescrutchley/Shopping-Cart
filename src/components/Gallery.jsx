@@ -1,22 +1,64 @@
 import ProductRow from "./ProductRow";
+import SearchProducts from "./SearchProducts";
 import styles from "../styles/ShoppingPage.module.css";
 import { useState } from "react";
+import SortBy from "./SortBy";
 
 const Gallery = () => {
+  // gallery coordinates products according to user choice
+  // category, search term, number to show passed to product row.
+  // show number is just an initial default.
+
+  const [showNumber, setShowNumber] = useState(10);
+  const [sortBy, setSortBy] = useState(null);
+  const [category, setCategory] = useState(null);
+
+  //extract search component.
+  const [search, setSearch] = useState(null);
+
+  const handleSortBy = (value) => {
+    setSortBy(value);
+  };
+
+  const handleSubmit = (value) => {
+    if (value) setSearch(value);
+  };
+
   return (
     <>
-      <div className={styles.sortByContainer}>
-        <label htmlFor="sortby">Sort By:</label>
-        <select id="sortby" name="sortby">
-          <option value="asc">Price Ascending</option>
-          <option value="desc">Price Descending</option>
-          <option value="rating">Rating</option>
-          <option selected value="alpha">Alphabetical A-Z</option>
-        </select>
+      <div className={styles.galleryHeaderWrapper}>
+        <div className={styles.categoryContainer}>
+          <button
+            className={category === null ? `${styles.active}` : null}
+            onClick={() => setCategory(null)}
+          >
+            All Categories
+          </button>
+          <button
+            className={category === "electronics" ? `${styles.active}` : null}
+            onClick={() => setCategory("electronics")}
+          >
+            Electronics
+          </button>
+          <button
+            className={category === "jewelery" ? `${styles.active}` : null}
+            onClick={() => setCategory("jewelery")}
+          >
+            Jewelry
+          </button>
+        </div>
+        <SortBy handleSelect={handleSortBy} />
+        <SearchProducts handleSubmit={handleSubmit} searchTerms={[search]} />
+
       </div>
+
       <section className={styles.gallery}>
-        {/* replace with own comp */}
-        <ProductRow />
+        <ProductRow
+          sortBy={sortBy}
+          searchTerm={search}
+          category={category}
+          showNumber={showNumber}
+        />
       </section>
     </>
   );

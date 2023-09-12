@@ -2,7 +2,7 @@
 
 export const sortProducts = (products, sortBy) => {
     let sorted;
-    console.log('sorting by ', sortBy)
+    console.log('sorting function input: ', products)
     switch (sortBy) {
         case null:
             sorted = products.slice();
@@ -19,13 +19,15 @@ export const sortProducts = (products, sortBy) => {
     return sorted;
 }
 
+// array in, array out.
+
 
 export const searchProducts = (products, searchTerm) => {
+    console.log('searching function input: ', products)
+
     if (searchTerm === null) return products;
     const regexp = new RegExp(searchTerm, 'i');
-    console.log('filtering by ' + searchTerm)
-    console.log(products)
     let searched;
-    searched = products.filter((item) => regexp.test(item.title));
+    searched = products.slice().filter((item) => regexp.test(item.title));
     return searched;
 }
