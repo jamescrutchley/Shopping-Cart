@@ -1,12 +1,15 @@
 import styles from "../styles/CartCard.module.css";
 import buttonStyles from "../styles/Buttons.module.css";
-import { useEffect } from "react";
+import { useEffect, useContext } from "react";
 import ProductControls from "./ProductControls";
 import QuantityControls from "./QuantityControls";
 import { DollarCents } from "../helpers/DollarCents";
+import CartContext from "../context/CartContext";
 
 const CartCard = ({ data = null }) => {
   const { title, price, quantity, image } = data || {};
+  const { cartArray, addToCart } = useContext(CartContext);
+
 
   return (
     <article className={styles.card}>
@@ -20,7 +23,8 @@ const CartCard = ({ data = null }) => {
         <div className={styles.priceContainer}>
           <p>{DollarCents(price)}</p>
         </div>
-        <QuantityControls className={styles.quantityControls} inCart={quantity} />
+        {/* <QuantityControls className={styles.quantityControls} inCart={quantity} onChange={addToCart} /> */}
+        <ProductControls className={styles.quantityControls} data={data} cartPanel="true"></ProductControls>
         <div className={styles.priceTotalContainer}>
           <p>{DollarCents(price * quantity)}</p>
         </div>

@@ -5,10 +5,16 @@ import QuantityControls from "./QuantityControls";
 import check from "../assets/icons/check.svg";
 import CartContext from "../context/CartContext";
 
-const ProductControls = ({ data = null, isInCart = null }) => {
+const ProductControls = ({
+  data = null,
+  isInCart = null,
+  cartPanel = null,
+}) => {
   const { cartArray, addToCart } = useContext(CartContext);
   const [inCart, setInCart] = useState(isInCart);
   const [userQuantitySelection, setUserQuantitySelection] = useState(null);
+
+  const inSync = inCart === userQuantitySelection;
 
   useEffect(() => {
     if (data) {
@@ -20,6 +26,19 @@ const ProductControls = ({ data = null, isInCart = null }) => {
   const onQuantityChange = (value) => {
     setUserQuantitySelection(value);
   };
+
+  const quantityControlsOnly = (
+    <QuantityControls
+      key={inCart}
+      inCart={inCart}
+      onChange={onQuantityChange}
+      data={data}
+    />
+  );
+
+  if (cartPanel) {
+    return quantityControlsOnly
+  }
 
   return (
     <div className={styles.productControls}>
@@ -36,9 +55,9 @@ const ProductControls = ({ data = null, isInCart = null }) => {
       <div className={styles.addToCartContainer}>
         {!!inCart && (
           <button
-            disabled={inCart === userQuantitySelection}
+            disabled={inSync}
             onClick={() => addToCart(data, userQuantitySelection)}
-            className={styles.addToCart}
+            className={`${styles.addToCart} ${inSync ? styles.disabled : null}`}
           >
             {" "}
             Update Cart

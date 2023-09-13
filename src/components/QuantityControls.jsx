@@ -1,8 +1,10 @@
 import styles from "../styles/Buttons.module.css";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import ClickableInput from "./ClickableInput";
+import CartContext from "../context/CartContext";
 
-const QuantityControls = ({ inCart = null, onChange = null }) => {
+const QuantityControls = ({ inCart = null, onChange = null, data = null }) => {
+    const { cartArray, addToCart } = useContext(CartContext);
   const [quantity, setQuantity] = useState(inCart || 1);
 
   useEffect(() => {
@@ -18,14 +20,27 @@ const QuantityControls = ({ inCart = null, onChange = null }) => {
   }, [quantity, onChange]);
 
   const onInputChange = (e) => {
-    if (quantity === "") {
-        setQuantity(0);
+    console.log('inputchange');
+    const newQuantity = e.target.value < 10 ? Number(e.target.value) : "";
+  
+    setQuantity(newQuantity);
+  
+    if (data) {
+      console.log('live updating');
+      addToCart(data, newQuantity); // Pass the updated value
     }
-    setQuantity(e.target.value < 10 ? Number(e.target.value) : "");
   };
+  
 
   const onButtonClick = (val) => {
-    setQuantity(val);
+    const newQuantity = val;
+
+    setQuantity(newQuantity);
+
+    if (data) {
+        console.log('live updating')
+        addToCart(data, newQuantity);
+    }
   }
 
   return (
