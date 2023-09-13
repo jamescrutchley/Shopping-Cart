@@ -1,4 +1,5 @@
 import styles from "../styles/Footer.module.css";
+import github from '../assets/icons/github-mark.svg';
 
 const Footer = () => {
   return (
@@ -6,38 +7,38 @@ const Footer = () => {
       <div className={styles.promotionContainer}>
         <div className={styles.promotionInfo}>
           <h3>Say Hello To Great Savings</h3>
-          <p>Sign up now to receive 10% off your first order!</p>
+          <p><a href='#email'>Sign up now</a> to receive 10% off your first order!</p>
         </div>
         <div className={styles.signup}>
           <label htmlFor="email"></label>
-          <input type="text" id="email" />
+          <input type="text" id="email" placeholder="Your Email Here"/>
         </div>
       </div>
 
       <div className={styles.nav}>
         <div className={styles.navLinks}>
           <div className={styles.linksGroup}>
-            <h5>Group 1</h5>
+            <h5>Information</h5>
             <ul className={styles.linksList}>
-              <li>item 1</li>
-              <li>item 2</li>
-              <li>item 3</li>
+              <li>Our History</li>
+              <li>Delivery</li>
+              <li>Brands</li>
             </ul>
           </div>
           <div className={styles.linksGroup}>
-            <h5>Group 2</h5>
+            <h5>Services</h5>
             <ul className={styles.linksList}>
-              <li>item 1</li>
-              <li>item 2</li>
-              <li>item 3</li>
+              <li>Recalls</li>
+              <li>Magazine</li>
+              <li>Subscription</li>
             </ul>
           </div>
           <div className={styles.linksGroup}>
-            <h5>Group 3</h5>
+            <h5>Our Vision</h5>
             <ul className={styles.linksList}>
-              <li>item 1</li>
-              <li>item 2</li>
-              <li>item 3</li>
+            <li>Your Account</li>
+              <li>Track Your Order</li>
+              <li>Returns and Refunds</li>
             </ul>
           </div>
         </div>
@@ -58,11 +59,15 @@ const Footer = () => {
       </div>
       <div className={styles.legal}>
         <ul>
-          <li>legal item 1</li>
-          <li>legal item 2</li>
-          <li>legal item 3</li>
-          <li>legal item 4</li>
+          <li>Policies</li>
+          <li>Terms and Conditions</li>
+          <li>For Suppliers</li>
+          <li>About Us</li>
         </ul>
+      </div>
+      <div className={styles.subFooter}>
+      <a href="https://github.com/jamescrutchley"><img src={github} alt="github logo" /></a>
+        <p>Developed by James Crutchley</p>
       </div>
     </footer>
   );
