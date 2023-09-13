@@ -35,23 +35,20 @@ const ProductRow = ({
     setItemsDisplayed((prevCount) => prevCount + 5);
   };
 
-
-
   // upon requesting new products -- clear current product array?
-
-
-
 
   // if sorting - arrange array.
   useEffect(() => {
     if (fetchedProducts) {
-        //for each modifier - loop
+      //for each modifier - loop
       const sortedProducts = sortProducts(fetchedProducts, sortBy);
-      const sortedAndSearchedProducts = searchProducts(sortedProducts, searchTerm);
+      const sortedAndSearchedProducts = searchProducts(
+        sortedProducts,
+        searchTerm
+      );
       setProducts(sortedAndSearchedProducts);
     }
   }, [fetchedProducts, sortBy, searchTerm]);
-
 
   return (
     <>
@@ -68,18 +65,22 @@ const ProductRow = ({
             />
           );
         })}
-      <div className={styles.showingItemsContainer}>
-        <p>
-          Showing{" "}
-          {products && itemsDisplayed < products.length
-            ? itemsDisplayed
-            : products.length}{" "}
-          of {products.length} items
-        </p>
+      <div className={styles.loadWrapper}>
+        <div className={styles.showingItemsContainer}>
+          <p>
+            Showing{" "}
+            {products && itemsDisplayed < products.length
+              ? itemsDisplayed
+              : products.length}{" "}
+            of {products.length} items
+          </p>
+        </div>
+        {products && products.length > itemsDisplayed && (
+          <button className={styles.loadMore} onClick={() => loadMore()}>
+            Load More
+          </button>
+        )}
       </div>
-      {products && products.length > itemsDisplayed && (
-        <button onClick={() => loadMore()}>Load More</button>
-      )}
     </>
   );
 };

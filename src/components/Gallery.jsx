@@ -21,11 +21,12 @@ const Gallery = () => {
   };
 
   const handleSubmit = (value) => {
+    if (value === '') setSearch(null)
     if (value) setSearch(value);
   };
 
   return (
-    <>
+    <div className={styles.wrapper}>
       <div className={styles.galleryHeaderWrapper}>
         <div className={styles.categoryContainer}>
           <button
@@ -47,9 +48,10 @@ const Gallery = () => {
             Jewelry
           </button>
         </div>
-        <SortBy handleSelect={handleSortBy} />
-        <SearchProducts handleSubmit={handleSubmit} searchTerms={[search]} />
-
+        <div className={styles.searchAndSort}>
+          <SortBy handleSelect={handleSortBy} />
+          <SearchProducts handleSubmit={handleSubmit} searchTerms={[search]} />
+        </div>
       </div>
 
       <section className={styles.gallery}>
@@ -60,7 +62,7 @@ const Gallery = () => {
           showNumber={showNumber}
         />
       </section>
-    </>
+    </div>
   );
 };
 

@@ -1,7 +1,8 @@
 export const DollarCents = (num) => {
-    if (typeof num !== Number) {
+    try {
+        return `$${num.toFixed(2)}`
+    } catch {
         return 
     }
-    return `$${num.toFixed(2)}`
 }
 

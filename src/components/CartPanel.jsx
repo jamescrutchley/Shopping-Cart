@@ -14,7 +14,7 @@ import { useState, useRef} from "react";
 const CartPanel = ({ clickBack }) => {
   const [fadeOutClass, setFadeOutClass] = useState(null);
   const { cartArray, addToCart } = useContext(CartContext);
-  const shippingPrice = Math.round(Math.random() * 10);
+  const shippingPrice = sumPrice(...cartArray.map((item) => 1 * item.quantity)) / 2;
   const ref = useRef(null);
 
   useClickAway(ref, () => {
@@ -60,7 +60,7 @@ const CartPanel = ({ clickBack }) => {
         <section className={styles.orderSummaryContainer}>
           <div>
             <p>Subtotal</p>
-            <p>{DollarCents(sumPrice(...cartArray.map((item) => item.price)))}</p>
+            <p>{DollarCents(sumPrice(...cartArray.map((item) => item.price * item.quantity)))}</p>
           </div>
           <div>
             <p>Shipping</p>
