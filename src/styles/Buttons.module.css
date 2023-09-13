@@ -13,6 +13,10 @@
   border: none;
 }
 
+.toggleTheme {
+    transition: transform 1s;
+}
+
 .cartButton img, .searchButton img {
     width: 30px;
     height: 30px;
@@ -23,6 +27,10 @@
 .addToCart:hover,
 .toggleTheme:hover {
   cursor: pointer;
+}
+
+.toggleTheme {
+    transition: spin 0.5s ease-in-out;
 }
 
 .cartButton.active::after {
@@ -52,9 +60,10 @@
 
 .cartBadge {
   position: relative;
-  bottom: 30px;
+  bottom: 40px;
   right: -7px;
   background-color: var(--accent);
+  color: var(--text-secondary);
   border-radius: 10px;
   width: 15px;
   height: 15px;
@@ -63,6 +72,7 @@
   justify-content: center;
   border: var(--text-primary) 1px solid;
   font-size: 9px;
+  font-weight: bold;
 }
 
 .productControls {
@@ -156,6 +166,7 @@ button:hover {
     margin: 4px;
     gap: 4px;
     align-items: center;
+    justify-content: space-around;
 }
 
 .clickableInput, .clickableInput * {
@@ -184,4 +195,22 @@ button:hover {
     width: 16px;
     height: 16px;
     filter: opacity();
+}
+
+.disabled {
+    background-color: var(--disabled);
+}
+
+.disabled:hover {
+    transform: scale(1);
+}
+
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(180deg);
+    }
 }

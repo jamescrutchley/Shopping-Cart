@@ -12,9 +12,9 @@
 
     justify-content: space-between;
     align-items: center;
-    padding: 1rem;
-
-    border: 1px solid black;
+    padding: 8px;
+    border-bottom: 2px solid var(--text-primary);
+    border-top: 2px solid var(--text-primary);
 }
 
 .nav a {
@@ -56,6 +56,7 @@ a:hover  a {
 }
 
 .pageLinks a {
+    border-radius: 2px;
     width: 60px;
     position: relative;
 }
@@ -69,7 +70,8 @@ a:hover  a {
     gap: clamp(12px, 24px, 32px);
 
     width: fit-content;
-    justify-content: flex-end;
+    justify-content: center;
+    padding-top: 4px;
     align-items: flex-start;
 }
 
@@ -77,3 +79,4 @@ a:hover  a {
     width: 20%;
     height: 20%;
 }
+

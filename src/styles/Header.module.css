@@ -5,7 +5,22 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 8px;
 
-    padding: 2%;
-    border: 1px solid var(--text-primary);
+    background: linear-gradient(200deg, var(--background), var(--background-tertiary));
+    filter: contrast(160%);
+
 }
+
+h1 {
+    text-wrap: nowrap;
+    font-size: clamp(26px, 30px, 40px);
+    color: var(--text-primary);
+    transition: transform 0.2s;
+}
+
+h1:hover {
+    transform: scale(1.05);
+}
+
+

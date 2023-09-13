@@ -1,8 +1,8 @@
 import styles from "../styles/ImagePanel.module.css";
 import { useState, useRef } from "react";
-import {useClickAway} from 'react-use';
+import { useClickAway } from "react-use";
 
-const ImagePanel = ({ clickBack, img }) => {
+const ImagePanel = ({ clickBack, img, description }) => {
   const [fadeOutClass, setFadeOutClass] = useState(null);
   const ref = useRef(null);
 
@@ -18,21 +18,24 @@ const ImagePanel = ({ clickBack, img }) => {
   };
 
   return (
-      <section 
-        className={`${styles.panelWrapper} ${fadeOutClass ? styles.fade : ""}`}
-      >
-        <div className={styles.imagePanelContainer}>
-          <div ref={ref} className={styles.imageContainer}>
-            <img className={styles.image} src={img} alt="product" />
-          </div>
-          <button
-            onClick={() => notifyClickBack()}
-            className={styles.closeButton}
-          >
-            X
-          </button>
+    <section
+      className={`${styles.panelWrapper} ${fadeOutClass ? styles.fade : ""}`}
+    >
+      <div className={styles.imagePanelContainer}>
+        <div ref={ref} className={styles.imageContainer}>
+          <img className={styles.image} src={img} alt="product" />
         </div>
-      </section>
+        <div>
+            <p className={styles.description}>{description}</p>
+        </div>
+      </div>
+      <button
+          onClick={() => notifyClickBack()}
+          className={styles.closeButton}
+        >
+          <div>x</div>
+        </button>
+    </section>
   );
 };
 

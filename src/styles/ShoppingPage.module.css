@@ -2,20 +2,17 @@
 @import "./SearchProducts.module.css";
 
 .shoppingPage {
+    background-image: url('../assets/icons/nordwood-themes.jpg');
   display: flex;
   flex-direction: column;
   min-height: 80vh;
-
-  padding: 20px;
-  background: linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, 0.03),
-    /* Black with opacity */ rgba(255, 255, 255, 0.2) /* White with opacity */
-  );
+  padding-top: 16px;
+  background: linear-gradient(to top, var(--background), var(--background-secondary));
 }
 
 h2 {
   align-self: center;
+  margin-bottom: 24px;
 }
 
 .gallery {
@@ -61,7 +58,7 @@ h2 {
 }
 
 .categoryContainer {
-    text-align: left;
+  text-align: left;
   max-width: 62px;
   justify-self: flex-start;
   position: relative;
@@ -72,38 +69,39 @@ h2 {
 }
 
 .categoryContainer button {
-    text-align: left;
+  text-align: left;
   width: fit-content;
   position: relative;
   border: none;
   background-color: transparent;
+  text-wrap: nowrap;
 }
 
 .categoryContainer button:hover {
   cursor: pointer;
 }
 
-.categoryContainer button:hover::before {
+/* .categoryContainer button:hover::before {
   content: "●";
   margin-right: 4px;
   color: var(--text-secondary);
   transition: fadeIn 1s ease-in-out;
-}
+} */
 
 .galleryHeaderWrapper {
-    display: flex;
-    justify-content: space-around;
-    position: relative;
-    margin: 32px 32px 0px 32px;
-    height: fit-content;
-    align-items: center;
-    padding: 8px;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  margin: 32px 32px 0px 32px;
+  height: fit-content;
+  align-items: center;
+  padding: 8px;
 }
 
 .galleryHeaderWrapper div {
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 @keyframes fadeIn {
@@ -119,24 +117,126 @@ h2 {
   color: var(--text-secondary);
 }
 
-@media screen and (max-width: 599px) {
-  .galleryHeaderWrapper {
-    display: grid;
-    grid-template-rows: 1fr;
-    grid-template-areas: "category"
-    "sort";
+.wrapper {
+  margin-top: 32px;
+  display: flex;
+  padding: clamp(4px, 20px, 24px);
+  background: linear-gradient(40deg, var(--background), var(--background-secondary));
+
+}
+
+@media screen and (max-width: 4000px) {
+    h2 {
+        margin-bottom: 50px;
+    }
+    .loadWrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        bottom: 100%;
+        justify-content: center;
+        -ms-grid-row-span: 3;
+    }
+    .loadMore {
+        color: var(--background);
+        background-color: var(--text-secondary);
+        position: relative;
+        top: 0;
+        border: none;
+        padding: 8px;
+        font-size: 18px;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+  .wrapper {
+    border-bottom: 2px solid var(--text-primary);
+    display: flex;
+    flex-direction: column;
+    color: var(--text-primary);
+  }
+  .searchAndSort {
+    border-radius: 2px;
+    max-width: fit-content;
+    height: fit-content;
+    display: flex;
+    align-items: center;
     justify-content: center;
     align-items: center;
-    width: auto;
+    border: 2px solid var(--text-primary);
+  }
+  .searchContainer {
+    padding-top: 8px;
+    padding-bottom: 8px;
+    height: 40px;
+  }
+  .searchContainer button {
+    align-self: stretch;
+    height: 36px;
+    background-color: var(--accent);
+  }
+  .searchInput {
+    height: 32px;
+  }
+  .galleryHeaderWrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+ background-color: transparent;
+  }
+  .categoryContainer {
+    align-self: center;
+    flex-direction: column;
+    display: flex;
+    background-color: transparent;
   }
   .sortByContainer {
     grid-area: sort;
     -ms-grid-row-span: 2;
+    font-size: 12px;
+    margin: 0;
+    padding: 2px;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .sortByContainer select {
+    height: 40px;
+    border: 1px solid var(--text-primary);
+    background-color: transparent;
+    color: var(--text-primary);
+    border-radius: 2px;
+  }
+  .sortByContainer label {
+    text-align: center;
+    margin: 0px 2px 0px 2px;
+    align-self: center;
   }
   .categoryContainer {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
+  }
+  .gallery {
+    display: grid;
+    grid-auto-flow: dense;
+    padding: 0px 8px 8px 8px;
+
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  }
+}
+
+@media screen and (max-width: 599px) {
+  h2 {
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 16px;
+  }
+  .galleryHeaderWrapper * {
+    max-width: fit-content;
+    font-size: 12px;
   }
 }

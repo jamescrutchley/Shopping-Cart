@@ -1,18 +1,46 @@
 :root {
-    --background: #f8f9fa;
+    --background: #f8faf8;
+    --background-secondary: #d5ffe431;
     --text-primary: black;
     --text-secondary: #59C9A5;
     --accent: #FFFD98;
+    --disabled: lightgray;
+    --background-tertiary: #48e37e69;
   }
   [data-theme='dark'] {
-    --background: #101a2a;
+    --background: #141814;
+    --background-secondary: #0f1e0bd5;
     --text-primary: rgb(233, 233, 233);
     --text-secondary: #59C9A5;
     --accent: #FFFD98;
+    --disabled: lightgray;
   }
 
-  *[data-theme='dark'] img {
+  *[data-theme='dark'] .nav img, *[data-theme='dark'] .searchContainer img {
+    filter: invert(90%) brightness(2);
+  }
+
+
+*[data-theme=null] .searchContainer img {
     filter: invert(90%);
+}
+
+  *[data-theme='dark'] .toggleTheme {
+    transform: rotate(180deg);
+  }
+
+  *[data-theme='dark'] .featuredPanel {
+    filter: invert(90%) contrast(250%) brightness(140%);
+  }
+
+  *[data-theme='dark'] .featuredPanel a, .featuredPanel h2 {
+    color: var(--text-primary);
+    filter: invert(90%) brightness(10%);
+  }
+
+  .productImg[data-theme='dark'] * {
+    filter: invert(0%) brightness(50%) contrast(50%);
+    transform: scale(1.1);
   }
 
   html {
@@ -20,6 +48,8 @@
   }
   
   body {
+    margin: 0;
+    padding: 0;
     font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   }
   
@@ -32,10 +62,11 @@
     letter-spacing: 4px;
   }
 
-  * {
-    margin: 0;
-    padding: 0;
+  div, nav {
+    border: none;
     box-sizing: border-box;
+    background-color: var(--background);
+    color: var(--text-primary);
   }
 
    #root, header, footer, nav {
@@ -43,8 +74,9 @@
     color: var(--text-primary);
   }
 
-  nav {
-    background-color: white;
+  ul {
+    margin: 0;
+    padding: 0;
   }
 
   header {
@@ -52,6 +84,11 @@
     color: var(--accent);
   }
 
+  header a {
+    text-decoration: none;
+  }
+
 #root {
     min-height: 100vh;
 }
+

@@ -139,7 +139,7 @@ h2 {
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-color: rgba(0, 0, 0, 0.5); /* Adjust the alpha value (0.5) for transparency */
+    background-color: rgba(0, 0, 0, 0.5); 
     z-index: 9999; /* Ensure it's above other elements */
     display: flex;
   }
@@ -167,26 +167,27 @@ h2 {
     flex-direction: column;
     align-items: center;
     animation: fadeIn 0.2s ease-in-out;
-
-    padding: 8px;
     display: grid;
     gap: 8px;
     width: 100%;
  }
 
  .orderSummaryContainer div {
-    padding: 2px;
     width: auto;
     display: grid;
     grid-template-columns: 1.2fr 3fr 1.2fr 1.2fr;
     grid-template-areas: ". . . cost";
     justify-content: space-around;
     align-items: stretch;
+    padding-left: 4px;
+    padding-right: 4px;
+    border-radius: 4px;
  }
 
  .orderSummaryContainer div:last-child {
     padding-top: 8px;
     font-weight: bold;
+    background: var(--background-tertiary);
  }
 
  .orderSummaryContainer div p:last-child {
@@ -199,6 +200,7 @@ h2 {
   
 
   .cartWrapper {
+    padding: 8px;
     width: 100%;
     background-color: rgb(240, 240, 240);
   }
@@ -231,14 +233,16 @@ h2 {
     justify-self: center;
   }
 
+  
+
 
   @media screen and (max-width: 580px) {
 
+    .cartContainer * {
+        font-size: 12px;
+    }
     .cartHeaders {
-        display: grid;
-        grid-template-columns: 6fr 2fr 2fr;
-        grid-template-areas: "item price total";
-        padding-right: 40px;
+        display: none;
     }
 
     .quantity {
@@ -255,6 +259,9 @@ h2 {
 
     .cartHeaders p:last-child {
         grid-area: total;
+    }
+    .cartContainer {
+        min-width: 0px;
     }
  }
  

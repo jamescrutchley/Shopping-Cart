@@ -16,20 +16,37 @@
 }
 
 .imagePanelContainer { 
+    gap: 12px;
+    display: flex;
     background-color: transparent;
     max-height: 80vh;
     max-width: 80vw;
-    cursor:-moz-zoom-out;
-    cursor: zoom-out;
+    filter: brightness(90%);
+    justify-content: flex-start;
+}
+
+.description {
+    font-size: 16px;
+    border-radius: 8px;
+    color: var(--text-primary);
+    padding: 16px;
+    background-color: var(--background);
+    border: 2px solid var(--text-primary);
 }
 
 .closeButton {
+    width: 32px;
     position: absolute;
-    font-size: 2rem;
     width: 40px;
     height: 40px;
     top: 2vh;
     left: 2vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 100px;
 }
 
 .image {
@@ -37,3 +54,27 @@
     max-height: 80vh;
     border-radius: 8px;
 }
+
+.imagePanelContainer div:last-child {
+    padding: 8px;
+    background: linear-gradient(60deg, var(--background), var(--text-secondary));
+    border-radius: 8px;
+}
+
+
+@media screen and (max-width: 799px) {
+    .imagePanelContainer {
+        flex-direction: column;
+        height: fit-content;
+        gap: 4px;
+    }
+    .description {
+        font-size: small;
+        margin: 0;
+        padding: 4px;
+    }
+    .image {
+        min-width: 40%;
+        max-height: 60vh;
+    }
+  }
