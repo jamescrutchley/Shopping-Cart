@@ -1,5 +1,5 @@
 import styles from "../styles/Footer.module.css";
-import github from '../assets/icons/github-mark.svg';
+import github from "../assets/icons/github-mark.svg";
 
 const Footer = () => {
   return (
@@ -7,11 +7,14 @@ const Footer = () => {
       <div className={styles.promotionContainer}>
         <div className={styles.promotionInfo}>
           <h3>Say Hello To Great Savings</h3>
-          <p><a href='#email'>Sign up now</a> to receive 10% off your first order!</p>
+          <p>
+            <a href="#email">Sign up now</a> to receive 10% off your first
+            order!
+          </p>
         </div>
         <div className={styles.signup}>
           <label htmlFor="email"></label>
-          <input type="text" id="email" placeholder="Your Email Here"/>
+          <input type="text" id="email" placeholder="Your Email Here" />
         </div>
       </div>
 
@@ -36,7 +39,7 @@ const Footer = () => {
           <div className={styles.linksGroup}>
             <h5>Our Vision</h5>
             <ul className={styles.linksList}>
-            <li>Your Account</li>
+              <li>Your Account</li>
               <li>Track Your Order</li>
               <li>Returns and Refunds</li>
             </ul>
@@ -66,7 +69,9 @@ const Footer = () => {
         </ul>
       </div>
       <div className={styles.subFooter}>
-      <a href="https://github.com/jamescrutchley"><img src={github} alt="github logo" /></a>
+        <a href="https://github.com/jamescrutchley">
+          <img src={github} alt="github logo" />
+        </a>
         <p>Developed by James Crutchley</p>
       </div>
     </footer>

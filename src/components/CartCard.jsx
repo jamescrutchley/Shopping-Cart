@@ -10,7 +10,6 @@ const CartCard = ({ data = null }) => {
   const { title, price, quantity, image } = data || {};
   const { cartArray, addToCart } = useContext(CartContext);
 
-
   return (
     <article className={styles.card}>
       <div className={styles.cardImg}>
@@ -24,7 +23,11 @@ const CartCard = ({ data = null }) => {
           <p>{DollarCents(price)}</p>
         </div>
         {/* <QuantityControls className={styles.quantityControls} inCart={quantity} onChange={addToCart} /> */}
-        <ProductControls className={styles.quantityControls} data={data} cartPanel="true"></ProductControls>
+        <ProductControls
+          className={styles.quantityControls}
+          data={data}
+          cartPanel="true"
+        ></ProductControls>
         <div className={styles.priceTotalContainer}>
           <p>{DollarCents(price * quantity)}</p>
         </div>

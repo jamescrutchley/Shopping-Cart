@@ -1,49 +1,48 @@
-@import './Root.module.css';
+@import "./Root.module.css";
 
 .featuredPanel {
-    display: flex;
-    background-image:url('../assets/icons/pawel-czerwinski.jpg');
-    min-height: 50vh;
-    background-size: cover;
+  display: flex;
+  background-image: url("../assets/icons/pawel-czerwinski.jpg");
+  min-height: 50vh;
+  background-size: cover;
 }
 
-
 .link {
-    transform: skew(1deg);
-    position: absolute;
-    right: 5%;
-    bottom: 20%;
-    background-color: transparent;
-    height: fit-content;
-    width: fit-content;
-    padding: 8px;
-    margin: 32px 0px 0px 16px;
-    opacity: 0.8;
-    text-decoration: none;
-    border: 2px solid var(--text-primary);
-    color: var(--text-primary)
+  transform: skew(1deg);
+  position: absolute;
+  right: 5%;
+  bottom: 20%;
+  background-color: transparent;
+  height: fit-content;
+  width: fit-content;
+  padding: 8px;
+  margin: 32px 0px 0px 16px;
+  opacity: 0.8;
+  text-decoration: none;
+  border: 2px solid var(--text-primary);
+  color: var(--text-primary);
 }
 
 @keyframes slideUp {
-    0% {
-        transform: scaleY(0);
-    }
-    100% {
-        transform: scaleY(1);
-    }
+  0% {
+    transform: scaleY(0);
+  }
+  100% {
+    transform: scaleY(1);
+  }
 }
 
 .link:hover {
-    transform: scale(1.05);
-    opacity: 1;
-    border: var(--accent) 2px solid;
+  transform: scale(1.05);
+  opacity: 1;
+  border: var(--accent) 2px solid;
 }
 
 h2 {
-    text-decoration: none;
-    padding: 0;
-    margin: 0;
-    color: var(--text-primary);
-    background-color: transparent;
-    animation: 0.2 slideUp ease-in;
+  text-decoration: none;
+  padding: 0;
+  margin: 0;
+  color: var(--text-primary);
+  background-color: transparent;
+  animation: 0.2 slideUp ease-in;
 }

@@ -21,7 +21,7 @@ const Gallery = () => {
   };
 
   const handleSubmit = (value) => {
-    if (value === '') setSearch(null)
+    if (value === "") setSearch(null);
     if (value) setSearch(value);
   };
 

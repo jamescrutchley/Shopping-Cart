@@ -10,8 +10,7 @@ const CartButton = ({ full = false, onClick }) => {
 
   const itemsInCart = cartArray.length;
 
-  useEffect(() => {
-  }, [cartArray, itemsInCart]);
+  useEffect(() => {}, [cartArray, itemsInCart]);
 
   return (
     <>

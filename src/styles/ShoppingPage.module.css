@@ -2,12 +2,16 @@
 @import "./SearchProducts.module.css";
 
 .shoppingPage {
-    background-image: url('../assets/icons/nordwood-themes.jpg');
+  background-image: url("../assets/icons/nordwood-themes.jpg");
   display: flex;
   flex-direction: column;
   min-height: 80vh;
   padding-top: 16px;
-  background: linear-gradient(to top, var(--background), var(--background-secondary));
+  background: linear-gradient(
+    to top,
+    var(--background),
+    var(--background-secondary)
+  );
 }
 
 h2 {
@@ -121,33 +125,36 @@ h2 {
   margin-top: 32px;
   display: flex;
   padding: clamp(4px, 20px, 24px);
-  background: linear-gradient(40deg, var(--background), var(--background-secondary));
-
+  background: linear-gradient(
+    40deg,
+    var(--background),
+    var(--background-secondary)
+  );
 }
 
 @media screen and (max-width: 4000px) {
-    h2 {
-        margin-bottom: 50px;
-    }
-    .loadWrapper {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        bottom: 100%;
-        justify-content: center;
-        -ms-grid-row-span: 3;
-    }
-    .loadMore {
-        color: var(--background);
-        background-color: var(--text-secondary);
-        position: relative;
-        top: 0;
-        border: none;
-        padding: 8px;
-        font-size: 18px;
-        border-radius: 4px;
-        cursor: pointer;
-    }
+  h2 {
+    margin-bottom: 50px;
+  }
+  .loadWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    bottom: 100%;
+    justify-content: center;
+    -ms-grid-row-span: 3;
+  }
+  .loadMore {
+    color: var(--background);
+    background-color: var(--text-secondary);
+    position: relative;
+    top: 0;
+    border: none;
+    padding: 8px;
+    font-size: 18px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
   .wrapper {
     border-bottom: 2px solid var(--text-primary);
     display: flex;
@@ -183,7 +190,7 @@ h2 {
     justify-content: center;
     align-items: center;
     gap: 12px;
- background-color: transparent;
+    background-color: transparent;
   }
   .categoryContainer {
     align-self: center;

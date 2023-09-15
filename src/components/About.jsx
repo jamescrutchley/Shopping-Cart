@@ -10,7 +10,6 @@ import target from "../assets/icons/target.svg";
 const About = () => {
   const images = [revenue, money, target];
 
-
   return (
     <section className={styles.container}>
       {aboutData.map((section, index) => (
@@ -19,7 +18,9 @@ const About = () => {
           <div className={styles.textContainer}>
             <h2 className={styles.heading}>{section.title}</h2>
             {processText(section.copy).map((para, index) => (
-                <p key={index} className={styles.copy}>{para}</p>
+              <p key={index} className={styles.copy}>
+                {para}
+              </p>
             ))}
           </div>
         </div>

@@ -1,11 +1,16 @@
 import { render, screen } from '@testing-library/react';
-import userEvent from '@testing-library/user-event';
+import Header from '../components/Header.jsx'
 import { describe, it, expect } from 'vitest';
-import Header from '../components/Header';
+import { BrowserRouter } from 'react-router-dom';
 
-describe("Header", () => {
-    it("should render the header component", () => {
-        render(<Header />);
-        screen.debug();
+
+describe('Header', () => {
+    it('renders header', () => {
+      render(
+        <BrowserRouter>
+              <Header />
+        </BrowserRouter>);
+      const headline = screen.getByText(/Consumer Goods/i);
+      expect(headline).toBeInTheDocument();
     });
-})
+  });

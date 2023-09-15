@@ -14,12 +14,13 @@
 }
 
 .toggleTheme {
-    transition: transform 1s;
+  transition: transform 1s;
 }
 
-.cartButton img, .searchButton img {
-    width: 30px;
-    height: 30px;
+.cartButton img,
+.searchButton img {
+  width: 30px;
+  height: 30px;
 }
 
 .searchButton:hover,
@@ -30,7 +31,7 @@
 }
 
 .toggleTheme {
-    transition: spin 0.5s ease-in-out;
+  transition: spin 0.5s ease-in-out;
 }
 
 .cartButton.active::after {
@@ -43,8 +44,8 @@
 }
 
 .addToCart {
-    width: 100%;
-    border-radius: 4px;
+  width: 100%;
+  border-radius: 4px;
   font-size: 0.8rem;
   background-color: var(--text-secondary);
   color: var(--background);
@@ -76,23 +77,22 @@
 }
 
 .productControls {
-    justify-content: flex-end;
-    display: flex;
-    flex-direction: column;
+  justify-content: flex-end;
+  display: flex;
+  flex-direction: column;
   font-size: 12px;
   margin-top: 4px;
 }
 
 .quantityControls {
-  padding: 4px 4px 8px 4px                  ;
+  padding: 4px 4px 8px 4px;
   /* grid-area: input; */
   background-color: var(--background);
   gap: 4px;
   display: grid;
   justify-content: center;
   grid-template-columns: 1fr 2fr;
-  grid-template-areas: 
-  "label input"
+  grid-template-areas: "label input";
 }
 
 .quantityControls * {
@@ -135,82 +135,85 @@ button:hover {
 }
 
 .removeFromCartButton:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
 
-
-.decrementContainer, .incrementContainer {
-    border: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.decrementContainer,
+.incrementContainer {
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.decrementContainer button, .incrementContainer button {
-    border: none;
-    font-size: 20px;
-    padding: 4px;
+.decrementContainer button,
+.incrementContainer button {
+  border: none;
+  font-size: 20px;
+  padding: 4px;
 }
 
-.decrementContainer button:hover, .incrementContainer button:hover {
-    font-weight: bold;
-    background-color: rgba(119, 136, 153, 0.21);
+.decrementContainer button:hover,
+.incrementContainer button:hover {
+  font-weight: bold;
+  background-color: rgba(119, 136, 153, 0.21);
 }
 
 .controlsWrapper {
-    display: flex;
-    border: 2px solid lightslategray;
-    border-radius: 4px;
-    opacity: 0.9;
-    padding: 4px 6px 4px 6px;
-    margin: 4px;
-    gap: 4px;
-    align-items: center;
-    justify-content: space-around;
+  display: flex;
+  border: 2px solid lightslategray;
+  border-radius: 4px;
+  opacity: 0.9;
+  padding: 4px 6px 4px 6px;
+  margin: 4px;
+  gap: 4px;
+  align-items: center;
+  justify-content: space-around;
 }
 
-.clickableInput, .clickableInput * {
-    border: none;
-    font-weight: bold;
-    text-align: center;
-    font-size: 18px;
+.clickableInput,
+.clickableInput * {
+  border: none;
+  font-weight: bold;
+  text-align: center;
+  font-size: 18px;
 }
 
 .clickableInputContainer {
-    color: blue;
+  color: blue;
 }
 
 .clickableInput:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .inCartNotif {
-    color: var(--text-secondary);
-    position: relative;
-    top: -24px;
-    align-self: flex-end;
+  color: var(--text-secondary);
+  position: relative;
+  top: -24px;
+  align-self: flex-end;
 }
 
 .icon {
-    width: 16px;
-    height: 16px;
-    filter: opacity();
+  width: 16px;
+  height: 16px;
+  filter: opacity();
 }
 
 .disabled {
-    background-color: var(--disabled);
+  background-color: var(--disabled);
 }
 
 .disabled:hover {
-    transform: scale(1);
+  transform: scale(1);
+  cursor: default;
 }
 
-
 @keyframes spin {
-    0% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotate(180deg);
-    }
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(180deg);
+  }
 }

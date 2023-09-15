@@ -28,7 +28,7 @@ const ProductRow = ({
   } = useFetch(
     category
       ? `https://fakestoreapi.com/products/category/${category}`
-      : `https://fakestoreapi.com/products`
+      : `https://fakestoreapi.com/products`,
   );
 
   const loadMore = () => {
@@ -44,7 +44,7 @@ const ProductRow = ({
       const sortedProducts = sortProducts(fetchedProducts, sortBy);
       const sortedAndSearchedProducts = searchProducts(
         sortedProducts,
-        searchTerm
+        searchTerm,
       );
       setProducts(sortedAndSearchedProducts);
     }

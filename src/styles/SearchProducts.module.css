@@ -1,77 +1,74 @@
-@import './Root.module.css';
-
+@import "./Root.module.css";
 
 .searchButton {
-    border: var(--text-primary) 1px solid;
-    cursor: pointer;
-    transition: background 0.2s;
-    padding: -32px;
+  border: var(--text-primary) 1px solid;
+  cursor: pointer;
+  transition: background 0.2s;
+  padding: -32px;
 }
 
 .searchButton:active {
-    transform: scale(1.2);
+  transform: scale(1.2);
 }
 
 .searchInput {
-    animation: ease-in slideUp 0.3s;
+  animation: ease-in slideUp 0.3s;
 }
 
-
 @keyframes slideUp {
-    0% {
-        transform: scaleY(0);
-    }
-    100% {
-        transform: scaleY(1);
-    }
+  0% {
+    transform: scaleY(0);
+  }
+  100% {
+    transform: scaleY(1);
+  }
 }
 
 @keyframes fadeOut {
-    0% {
-        opacity: 1;
-    }
-    100% {
-        opacity: 0;
-    }
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 
 .searchContainer {
-    display: grid;
-    grid-template-rows: 1fr 1fr;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
 }
 
-
 @media screen and (max-width: 4000px) {
-    .searchContainer {
-        height: 100%;
-        border: none;
-    }
-    .searchInput {
-        height: 34px;
-        border: 1px solid var(--text-primary);
-        border-radius: 2px;
-        color: var(--text-primary);
-        background-color: transparent;
-        padding: 2px;
-        padding-left: 4px;
-    }
-    .searchButton {
-        height: fit-content;
-        width: fit-content;
-        border: none;
-        color: var(--text-primary);
-        background-color: var(--background);
-        padding: 2px;
-        margin-right: 2px;
-        margin-left: 2px;
-    }
-    .searchButton img {
-        filter: contrast(0.5);
-    }
+  .searchContainer {
+    height: 100%;
+    border: none;
+  }
+  .searchInput {
+    height: 34px;
+    border: 1px solid var(--text-primary);
+    border-radius: 2px;
+    color: var(--text-primary);
+    background-color: transparent;
+    padding: 2px;
+    padding-left: 4px;
+  }
+  .searchButton {
+    height: fit-content;
+    width: fit-content;
+    border: none;
+    color: var(--text-primary);
+    background-color: var(--background);
+    padding: 2px;
+    margin-right: 2px;
+    margin-left: 2px;
+  }
+  .searchButton img {
+    filter: contrast(0.5);
+  }
 }
 
 @media screen and (max-width: 599px) {
-    .searchInput {
-        width: clamp(64px, 96px, 144px);
-    }
+  .searchInput {
+    width: clamp(64px, 96px, 144px);
   }
+}

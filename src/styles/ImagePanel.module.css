@@ -1,80 +1,83 @@
-@import './Root.module.css';
-
+@import "./Root.module.css";
 
 .panelWrapper {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background-color: rgba(0, 0, 0, 0.8); /* Adjust the alpha value (0.5) for transparency */
-    z-index: 9999; /* Ensure it's above other elements */
-    display: flex;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.8
+  ); /* Adjust the alpha value (0.5) for transparency */
+  z-index: 9999; /* Ensure it's above other elements */
+  display: flex;
 }
 
-.imagePanelContainer { 
-    gap: 12px;
-    display: flex;
-    background-color: transparent;
-    max-height: 80vh;
-    max-width: 80vw;
-    filter: brightness(90%);
-    justify-content: flex-start;
+.imagePanelContainer {
+  gap: 12px;
+  display: flex;
+  background-color: transparent;
+  max-height: 80vh;
+  max-width: 80vw;
+  filter: brightness(90%);
+  justify-content: flex-start;
 }
 
 .description {
-    font-size: 16px;
-    border-radius: 8px;
-    color: var(--text-primary);
-    padding: 16px;
-    background-color: var(--background);
-    border: 2px solid var(--text-primary);
+  font-size: 16px;
+  border-radius: 8px;
+  color: var(--text-primary);
+  padding: 16px;
+  background-color: var(--background);
+  border: 2px solid var(--text-primary);
 }
 
 .closeButton {
-    width: 32px;
-    position: absolute;
-    width: 40px;
-    height: 40px;
-    top: 2vh;
-    left: 2vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+  width: 32px;
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  top: 2vh;
+  left: 2vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 
-    border-radius: 100px;
+  border-radius: 100px;
 }
 
 .image {
-    max-width: 50vw;
-    max-height: 80vh;
-    border-radius: 8px;
+  max-width: 50vw;
+  max-height: 80vh;
+  border-radius: 8px;
 }
 
 .imagePanelContainer div:last-child {
-    padding: 8px;
-    background: linear-gradient(60deg, var(--background), var(--text-secondary));
-    border-radius: 8px;
+  padding: 8px;
+  background: linear-gradient(60deg, var(--background), var(--text-secondary));
+  border-radius: 8px;
 }
 
-
 @media screen and (max-width: 799px) {
-    .imagePanelContainer {
-        flex-direction: column;
-        height: fit-content;
-        gap: 4px;
-    }
-    .description {
-        font-size: small;
-        margin: 0;
-        padding: 4px;
-    }
-    .image {
-        min-width: 40%;
-        max-height: 60vh;
-    }
+  .imagePanelContainer {
+    flex-direction: column;
+    height: fit-content;
+    gap: 4px;
   }
+  .description {
+    font-size: small;
+    margin: 0;
+    padding: 4px;
+  }
+  .image {
+    min-width: 40%;
+    max-height: 60vh;
+  }
+}

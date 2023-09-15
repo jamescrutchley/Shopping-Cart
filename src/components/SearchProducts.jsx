@@ -10,7 +10,6 @@ const SearchProducts = ({ handleSubmit, searchTerms = [] }) => {
   const handleKeyPress = (e) => {
     if (e.key === "Enter") {
       handleSubmit(input);
-      setInput("");
     }
   };
 
@@ -46,7 +45,6 @@ const SearchProducts = ({ handleSubmit, searchTerms = [] }) => {
       >
         <img src={searchIcon} alt="search products" />
       </button>
-      <div className={styles.searchQueries}>{currentSearchTerms}</div>
     </div>
   );
 };

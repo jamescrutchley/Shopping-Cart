@@ -14,7 +14,13 @@ const Product = ({ data = null, isInCart, addToCart }) => {
 
   return (
     <article className={`${styles.product} ${isInCart ? styles.isInCart : ""}`}>
-      {expand && <ImagePanel img={image} description={description} clickBack={expandImage} />}
+      {expand && (
+        <ImagePanel
+          img={image}
+          description={description}
+          clickBack={expandImage}
+        />
+      )}
       <a onClick={() => expandImage()}>
         <div className={styles.productImg}>
           <div className={styles.imgOverlay}>

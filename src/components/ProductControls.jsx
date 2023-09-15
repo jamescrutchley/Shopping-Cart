@@ -37,7 +37,7 @@ const ProductControls = ({
   );
 
   if (cartPanel) {
-    return quantityControlsOnly
+    return quantityControlsOnly;
   }
 
   return (

@@ -3,8 +3,7 @@ import SearchButton from "./SearchButton";
 import searchIcon from "../assets/icons/search.svg";
 import buttonStyles from "../styles/Buttons.module.css";
 import { useState, useRef } from "react";
-import {useClickAway} from 'react-use';
-
+import { useClickAway } from "react-use";
 
 const SearchPanel = ({ clickBack }) => {
   const [fadeOutClass, setFadeOutClass] = useState(null);
@@ -15,7 +14,6 @@ const SearchPanel = ({ clickBack }) => {
     notifyClickBack();
   });
 
-
   const notifyClickBack = () => {
     setFadeOutClass(true);
     setTimeout(() => {
@@ -23,10 +21,11 @@ const SearchPanel = ({ clickBack }) => {
     }, 150);
   };
   return (
-    <section className={`${styles.panelWrapper} ${
-        fadeOutClass ? styles.fade : ""
-      }`}>
-      <div ref={ref}
+    <section
+      className={`${styles.panelWrapper} ${fadeOutClass ? styles.fade : ""}`}
+    >
+      <div
+        ref={ref}
         className={`${styles.searchContainer} ${
           fadeOutClass ? styles.fade : ""
         }`}
