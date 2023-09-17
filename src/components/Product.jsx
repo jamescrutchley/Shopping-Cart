@@ -24,7 +24,7 @@ const Product = ({ data = null, isInCart, addToCart }) => {
       <a onClick={() => expandImage()}>
         <div className={styles.productImg}>
           <div className={styles.imgOverlay}>
-            <img className={styles.image} src={image} alt="" />
+            <img className={styles.image} src={image} alt="product image" />
             <div className={styles.decoration}></div>
           </div>
         </div>

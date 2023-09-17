@@ -9,7 +9,7 @@ const SortBy = ({ handleSelect }) => {
         name="sortby"
         onChange={(e) => handleSelect(e.target.value)}
       >
-        <option disabled value="recommended">
+        <option default disabled value="recommended">
           Recommended
         </option>
         <option value="asc">Price Ascending</option>

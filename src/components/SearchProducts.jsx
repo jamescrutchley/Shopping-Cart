@@ -28,7 +28,7 @@ const SearchProducts = ({ handleSubmit, searchTerms = [] }) => {
   );
 
   return (
-    <div className={styles.searchContainer} ref={ref}>
+    <div role='search' className={styles.searchContainer} ref={ref}>
       <label htmlFor="search"></label>
       <input
         ref={inputRef}

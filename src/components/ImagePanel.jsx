@@ -26,7 +26,7 @@ const ImagePanel = ({ clickBack, img, description }) => {
           <img className={styles.image} src={img} alt="product" />
         </div>
         <div>
-          <p className={styles.description}>{description}</p>
+          <p role='paragraph' className={styles.description}>{description}</p>
         </div>
       </div>
       <button onClick={() => notifyClickBack()} className={styles.closeButton}>

@@ -28,7 +28,8 @@ const CartPanel = ({ clickBack }) => {
   };
 
   return (
-    <section
+    <div
+    data-testid='panel-wrapper'
       className={`${styles.panelWrapper} ${fadeOutClass ? styles.fade : ""}`}
     >
       <div
@@ -81,7 +82,7 @@ const CartPanel = ({ clickBack }) => {
           </section>
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 

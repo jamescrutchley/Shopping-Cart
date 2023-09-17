@@ -1,5 +1,4 @@
 import aboutData from "../data/about.json";
-import { useEffect } from "react";
 import styles from "../styles/About.module.css";
 import { processText } from "../helpers/processText";
 

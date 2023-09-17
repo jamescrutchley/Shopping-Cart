@@ -4,9 +4,7 @@ import { useContext, useEffect, useState } from "react";
 import CartContext from "../context/CartContext";
 import useFetch from "../hooks/useFetch";
 import { sortProducts, searchProducts } from "../helpers/sortProducts";
-
-import mockProductList from "../mocks/mockProductList";
-import { fakeStore } from "../mocks/copiedObj";
+import { Link } from "react-router-dom";
 
 const ProductRow = ({
   showNumber,
@@ -18,8 +16,6 @@ const ProductRow = ({
   // any reason to have context this high up? why pass it along?
   const [products, setProducts] = useState([]);
   const { cartArray, addToCart } = useContext(CartContext);
-
-  const productsToDisplay = mockProductList;
 
   let {
     data: fetchedProducts,
@@ -52,7 +48,8 @@ const ProductRow = ({
 
   return (
     <>
-      {loading && <p>Loading...</p>}
+      {loading && <p role='status'>Loading...</p>}
+      {error && <p>Something went wrong. <Link to="/">Go Back.</Link></p>}
       {Array.isArray(products) &&
         products.slice(0, itemsDisplayed).map((product, index) => {
           const isInCart = !!cartArray.find((item) => product.id === item.id);

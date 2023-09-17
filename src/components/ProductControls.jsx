@@ -41,7 +41,7 @@ const ProductControls = ({
   }
 
   return (
-    <div className={styles.productControls}>
+    <div role='region' className={styles.productControls}>
       {inCart ? (
         <p className={styles.inCartNotif}>
           In cart <img className={styles.icon} src={check} />

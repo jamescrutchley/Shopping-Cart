@@ -13,6 +13,7 @@ const ClickableInput = ({ onChange, onClick, onBlur, ...props }) => {
       className={styles.clickableInputContainer}
     >
       <input
+      id='quantity'
         onChange={(e) => onChange(e)}
         onBlur={(e) => onBlur(e)}
         className={styles.clickableInput}
