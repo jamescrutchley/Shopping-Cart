@@ -9,7 +9,8 @@ export const fakeStore = [
         "rating": {
             "rate": 3.9,
             "count": 120
-        }
+        },
+        "quantity": 4
     },
     {
         "id": 2,
@@ -21,7 +22,8 @@ export const fakeStore = [
         "rating": {
             "rate": 4.1,
             "count": 259
-        }
+        },
+        "quantity": 4
     },
     {
         "id": 3,
@@ -33,7 +35,9 @@ export const fakeStore = [
         "rating": {
             "rate": 4.7,
             "count": 500
-        }
+        },
+        "quantity": 2
+
     },
     {
         "id": 4,
@@ -45,7 +49,8 @@ export const fakeStore = [
         "rating": {
             "rate": 2.1,
             "count": 430
-        }
+        },
+        "quantity": 1
     },
     {
         "id": 5,
@@ -117,6 +122,7 @@ export const fakeStore = [
         "rating": {
             "rate": 2.9,
             "count": 470
-        }
+        },
+        "quantity": 4
     }
 ]
