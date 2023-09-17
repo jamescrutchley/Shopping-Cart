@@ -1,0 +1,115 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Gallery functions correctly > gallery renders correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="_wrapper_556691"
+  >
+    <div
+      class="_galleryHeaderWrapper_556691"
+    >
+      <div
+        class="_categoryContainer_556691"
+      >
+        <button
+          class="_active_556691"
+        >
+          All Categories
+        </button>
+        <button>
+          Electronics
+        </button>
+        <button>
+          Jewelry
+        </button>
+      </div>
+      <div
+        class="_searchAndSort_556691"
+      >
+        <div
+          class="_sortByContainer_556691"
+        >
+          <label
+            for="sortby"
+          >
+            Sort By:
+          </label>
+          <select
+            id="sortby"
+            name="sortby"
+          >
+            <option
+              default=""
+              disabled=""
+              value="recommended"
+            >
+              Recommended
+            </option>
+            <option
+              value="asc"
+            >
+              Price Ascending
+            </option>
+            <option
+              value="desc"
+            >
+              Price Descending
+            </option>
+            <option
+              disabled=""
+              value="rating"
+            >
+              Rating
+            </option>
+            <option
+              disabled=""
+              value="alpha"
+            >
+              Alphabetical A-Z
+            </option>
+          </select>
+        </div>
+        <div
+          class="_searchContainer_777731"
+        >
+          <label
+            for="search"
+          />
+          <input
+            class="_searchInput_777731"
+            id="search"
+            type="text"
+            value=""
+          />
+          <button
+            class="_searchButton_777731"
+          >
+            <img
+              alt="search products"
+              src="/src/assets/icons/search.svg"
+            />
+          </button>
+        </div>
+      </div>
+    </div>
+    <section
+      class="_gallery_556691"
+    >
+      <p>
+        Loading...
+      </p>
+      <div
+        class="_loadWrapper_556691"
+      >
+        <div
+          class="_showingItemsContainer_556691"
+        >
+          <p>
+            Showing 0 of 0 items
+          </p>
+        </div>
+      </div>
+    </section>
+  </div>
+</DocumentFragment>
+`;

@@ -1,0 +1,418 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Static components render correctly. > about snapshot 1`] = `
+<DocumentFragment>
+  <section
+    class="_container_eec6d2"
+  >
+    <div
+      class="_panel_eec6d2"
+    >
+      <img
+        class="_image_eec6d2"
+        src="/src/assets/icons/revenue.svg"
+      />
+      <div
+        class="_textContainer_eec6d2"
+      >
+        <h2
+          class="_heading_eec6d2"
+        >
+          dare to inspire
+        </h2>
+        <p
+          class="_copy_eec6d2"
+        >
+          We take pride in our relentless pursuit of innovation, ensuring that our offerings stay at the forefront of technology and design.
+        </p>
+        <p
+          class="_copy_eec6d2"
+        >
+          Our team of experts is always working tirelessly to bring you the best, keeping in mind affordability without compromising on quality. At Consumer Goods, we understand that your time is precious. That's why we've designed our shopping experience to be effortless and enjoyable.
+        </p>
+      </div>
+    </div>
+    <div
+      class="_panel_eec6d2"
+    >
+      <img
+        class="_image_eec6d2"
+        src="/src/assets/icons/money-bag.svg"
+      />
+      <div
+        class="_textContainer_eec6d2"
+      >
+        <h2
+          class="_heading_eec6d2"
+        >
+          Timeless Innovation
+        </h2>
+        <p
+          class="_copy_eec6d2"
+        >
+          We believe in creating products that stand the test of time while continually pushing the boundaries of what's possible. Our commitment to marrying tradition with cutting-edge technology results in innovations that endure, delivering lasting value and enriching the lives of those who embrace them. Each creation reflects our dedication to timelessness, ensuring that our legacy of innovation remains eternally relevant.
+        </p>
+      </div>
+    </div>
+    <div
+      class="_panel_eec6d2"
+    >
+      <img
+        class="_image_eec6d2"
+        src="/src/assets/icons/target.svg"
+      />
+      <div
+        class="_textContainer_eec6d2"
+      >
+        <h2
+          class="_heading_eec6d2"
+        >
+          Immanentizing the Eschaton
+        </h2>
+        <p
+          class="_copy_eec6d2"
+        >
+          Our relentless pursuit of excellence and innovation aims to create a future where every customer's dreams and desires are not just met but exceeded. We view each interaction as an opportunity to bring about a small slice of utopia in the form of exceptional products, unparalleled service, and unforgettable experiences.
+        </p>
+        <p
+          class="_copy_eec6d2"
+        >
+          Our commitment to turning aspirations into reality is our way of making the extraordinary a part of everyday life, inching us closer to a world where the highest ideals are immanent and attainable through our steadfast pursuit of customer delight.
+        </p>
+      </div>
+    </div>
+  </section>
+</DocumentFragment>
+`;
+
+exports[`Static components render correctly. > cartcard snapshot 1`] = `
+<DocumentFragment>
+  <article
+    class="_card_d72dd6"
+    data-testid="card"
+  >
+    <div
+      class="_cardImg_d72dd6"
+    >
+      <img
+        alt="product thumbnail"
+        class="_thumbnail_d72dd6"
+        src="https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg"
+      />
+    </div>
+    <div
+      class="_cardInfo_d72dd6"
+    >
+      <div
+        class="_titleContainer_d72dd6"
+      >
+        <p>
+          Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops
+        </p>
+      </div>
+      <div
+        class="_priceContainer_d72dd6"
+      >
+        <p>
+          $109.95
+        </p>
+      </div>
+      <div
+        class="_quantityControls_4bc385"
+      >
+        <label
+          for="quantity"
+        >
+          Qty:
+        </label>
+        <div
+          class="_controlsWrapper_4bc385"
+        >
+          <div
+            class="_decrementContainer_4bc385"
+          >
+            <button>
+              -
+            </button>
+          </div>
+          <div
+            class="_clickableInputContainer_4bc385"
+          >
+            <input
+              class="_clickableInput_4bc385"
+              id="quantity"
+              max="9"
+              min="1"
+              name="quantity"
+              type="quantity"
+              value="4"
+            />
+          </div>
+          <div
+            class="_incrementContainer_4bc385"
+          >
+            <button>
+              +
+            </button>
+          </div>
+        </div>
+      </div>
+      <div
+        class="_priceTotalContainer_d72dd6"
+      >
+        <p>
+          $439.80
+        </p>
+      </div>
+      <div
+        class="_productControlsContainer_d72dd6"
+      />
+    </div>
+  </article>
+</DocumentFragment>
+`;
+
+exports[`Static components render correctly. > featured snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="_featuredPanel_8c6ab7"
+  >
+    <a
+      class="_link_8c6ab7"
+      href="/shop"
+    >
+      <h2>
+        Browse Our Collection
+      </h2>
+    </a>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Static components render correctly. > footer snapshot 1`] = `
+<DocumentFragment>
+  <footer
+    class="_footer_4d8704"
+  >
+    <div
+      class="_promotionContainer_4d8704"
+    >
+      <div
+        class="_promotionInfo_4d8704"
+      >
+        <h3>
+          Say Hello To Great Savings
+        </h3>
+        <p>
+          <a
+            href="#email"
+          >
+            Sign up now
+          </a>
+           to receive 10% off your first order!
+        </p>
+      </div>
+      <div
+        class="_signup_4d8704"
+      >
+        <label
+          for="email"
+        />
+        <input
+          id="email"
+          placeholder="Your Email Here"
+          type="text"
+        />
+      </div>
+    </div>
+    <div
+      class="_nav_4d8704"
+    >
+      <div
+        class="_navLinks_4d8704"
+      >
+        <div
+          class="_linksGroup_4d8704"
+        >
+          <h5>
+            Information
+          </h5>
+          <ul
+            class="_linksList_4d8704"
+          >
+            <li>
+              Our History
+            </li>
+            <li>
+              Delivery
+            </li>
+            <li>
+              Brands
+            </li>
+          </ul>
+        </div>
+        <div
+          class="_linksGroup_4d8704"
+        >
+          <h5>
+            Services
+          </h5>
+          <ul
+            class="_linksList_4d8704"
+          >
+            <li>
+              Recalls
+            </li>
+            <li>
+              Magazine
+            </li>
+            <li>
+              Subscription
+            </li>
+          </ul>
+        </div>
+        <div
+          class="_linksGroup_4d8704"
+        >
+          <h5>
+            Our Vision
+          </h5>
+          <ul
+            class="_linksList_4d8704"
+          >
+            <li>
+              Your Account
+            </li>
+            <li>
+              Track Your Order
+            </li>
+            <li>
+              Returns and Refunds
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div
+        class="_divider_4d8704"
+      />
+      <div
+        class="_contact_4d8704"
+      >
+        <div
+          class="_contactInfo_4d8704"
+        >
+          <h4>
+            Get In Touch
+          </h4>
+          <p>
+            Our friendly staff are here to help. In-store, online, anytime!
+          </p>
+        </div>
+        <ul>
+          <li>
+            Phone
+          </li>
+          <li>
+            Email
+          </li>
+          <li>
+            Live Chat
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div
+      class="_legal_4d8704"
+    >
+      <ul>
+        <li>
+          Policies
+        </li>
+        <li>
+          Terms and Conditions
+        </li>
+        <li>
+          For Suppliers
+        </li>
+        <li>
+          About Us
+        </li>
+      </ul>
+    </div>
+    <div
+      class="_subFooter_4d8704"
+    >
+      <a
+        href="https://github.com/jamescrutchley"
+      >
+        <img
+          alt="github logo"
+          src="/src/assets/icons/github-mark.svg"
+        />
+      </a>
+      <p>
+        Developed by James Crutchley
+      </p>
+    </div>
+  </footer>
+</DocumentFragment>
+`;
+
+exports[`Static components render correctly. > header snapshot 1`] = `
+<DocumentFragment>
+  <header
+    class="_header_a9d33c"
+  >
+    <a
+      href="/"
+    >
+      <h1>
+        Consumer Goods
+      </h1>
+    </a>
+  </header>
+</DocumentFragment>
+`;
+
+exports[`Static components render correctly. > searchpanel snapshot 1`] = `
+<DocumentFragment>
+  <section
+    class="_panelWrapper_7f3fc5 "
+  >
+    <div
+      class="_searchContainer_7f3fc5 "
+    >
+      <button
+        class="_back_7f3fc5"
+      >
+        Back
+      </button>
+      <h2>
+        Search Our Collection:
+      </h2>
+      <div
+        class="_searchInputContainer_7f3fc5"
+      >
+        <label>
+          <p
+            class="_visuallyHidden_7f3fc5"
+          >
+            Search
+          </p>
+          <input
+            type="text"
+          />
+        </label>
+        <button
+          class="_searchCollection_4bc385"
+        >
+          <img
+            alt="Search"
+            src="/src/assets/icons/search.svg"
+          />
+        </button>
+      </div>
+    </div>
+  </section>
+</DocumentFragment>
+`;
