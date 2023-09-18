@@ -49,7 +49,7 @@ const ProductRow = ({
   return (
     <>
       {loading && <p role='status'>Loading...</p>}
-      {error && <p>Something went wrong. <Link to="/">Go Back.</Link></p>}
+      {/* {error && <p>Something went wrong. <Link to="/">Go Back.</Link></p>} */}
       {Array.isArray(products) &&
         products.slice(0, itemsDisplayed).map((product, index) => {
           const isInCart = !!cartArray.find((item) => product.id === item.id);

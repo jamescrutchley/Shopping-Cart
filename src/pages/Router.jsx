@@ -9,7 +9,7 @@ import Featured from "../components/Featured";
 const Router = () => {
     const router = createBrowserRouter([
         {
-            path: '/',
+            path: '/Shopping-Cart',
             element: <App />,
             errorElement: <ErrorPage />,
             children: [
@@ -29,7 +29,7 @@ const Router = () => {
         },
 
     ])
-    return <RouterProvider router={router} />;
+    return <RouterProvider router={router} basename="/Shopping-Cart/"/>;
   };
   
   export default Router;
