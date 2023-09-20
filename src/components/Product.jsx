@@ -1,6 +1,5 @@
 import styles from "../styles/Product.module.css";
-import buttonStyles from "../styles/Buttons.module.css";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import ProductControls from "./ProductControls";
 import ImagePanel from "./ImagePanel";
 

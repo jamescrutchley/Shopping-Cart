@@ -1,0 +1,17 @@
+@import "./Root.module.css";
+
+.clickableInput,
+.clickableInput * {
+  border: none;
+  font-weight: bold;
+  text-align: center;
+  font-size: 18px;
+}
+
+.clickableInputContainer {
+  color: blue;
+}
+
+.clickableInput:hover {
+  cursor: pointer;
+}

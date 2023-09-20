@@ -1,9 +1,9 @@
-import buttonStyles from "../styles/Buttons.module.css";
+import styles from "../styles/Nav.module.css";
 import themeIcon from "../assets/icons/dark-mode.svg";
 
 const ToggleTheme = ({ onClick }) => {
   return (
-    <button className={buttonStyles.toggleTheme} onClick={() => onClick()}>
+    <button className={styles.toggleTheme} onClick={() => onClick()}>
       <img src={themeIcon} alt="search" />
     </button>
   );

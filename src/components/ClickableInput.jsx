@@ -1,4 +1,4 @@
-import styles from "../styles/Buttons.module.css";
+import styles from "../styles/ClickableInput.module.css";
 
 const ClickableInput = ({ onChange, onClick, onBlur, ...props }) => {
   const handleClick = () => {

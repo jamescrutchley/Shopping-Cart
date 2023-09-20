@@ -3,7 +3,6 @@ import SearchPanel from "./SearchPanel";
 import SearchButton from "./SearchButton";
 import ToggleTheme from "./ToggleTheme";
 import styles from "../styles/Nav.module.css";
-import buttonStyles from "../styles/Buttons.module.css";
 import { useLocation, Link } from "react-router-dom";
 
 import { useState } from "react";
@@ -20,7 +19,7 @@ const Nav = ({ toggleTheme }) => {
 
   return (
     <nav className={styles.nav}>
-      <ToggleTheme className={buttonStyles.toggleTheme} onClick={toggleTheme} />
+      <ToggleTheme onClick={toggleTheme} />
 
       <div className={styles.pageLinks}>
         <Link

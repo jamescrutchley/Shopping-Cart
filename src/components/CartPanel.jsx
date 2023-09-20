@@ -1,4 +1,4 @@
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 import styles from "../styles/SearchPanel.module.css";
 import CartContext from "../context/CartContext";
 import CartCard from "./CartCard";
@@ -6,7 +6,6 @@ import sumPrice from "../helpers/sumPrice";
 import { DollarCents } from "../helpers/DollarCents";
 import { useClickAway } from "react-use";
 
-import buttonStyles from "../styles/Buttons.module.css";
 import { useState, useRef } from "react";
 
 const CartPanel = ({ clickBack }) => {

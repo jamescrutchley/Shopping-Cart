@@ -78,3 +78,14 @@ a:hover a {
   width: 20%;
   height: 20%;
 }
+
+
+.toggleTheme {
+    background-color: transparent;
+    border: none;
+    transition: transform 1s;
+  }
+
+  .toggleTheme:hover {
+    cursor: pointer;
+  }

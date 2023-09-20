@@ -1,0 +1,65 @@
+@import "./Root.module.css";
+
+.quantityControls {
+    padding: 4px 4px 8px 4px;
+    /* grid-area: input; */
+    background-color: var(--background);
+    gap: 4px;
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 1fr 2fr;
+    grid-template-areas: "label input";
+  }
+  
+  .quantityControls * {
+    background-color: var(--background);
+  }
+  
+  .quantityControls input {
+    grid-area: input;
+    max-width: 16px;
+    width: clamp(34px, 36px, 40px);
+    padding: 2px 0px 2px 2px;
+  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .quantityControls label {
+    grid-area: label;
+    align-self: center;
+  }
+
+  .decrementContainer,
+.incrementContainer {
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.decrementContainer button,
+.incrementContainer button {
+  border: none;
+  font-size: 20px;
+  padding: 4px;
+}
+
+.decrementContainer button:hover,
+.incrementContainer button:hover {
+  font-weight: bold;
+  background-color: rgba(119, 136, 153, 0.21);
+}
+
+.controlsWrapper {
+  display: flex;
+  border: 2px solid lightslategray;
+  border-radius: 4px;
+  opacity: 0.9;
+  padding: 4px 6px 4px 6px;
+  margin: 4px;
+  gap: 4px;
+  align-items: center;
+  justify-content: space-around;
+}

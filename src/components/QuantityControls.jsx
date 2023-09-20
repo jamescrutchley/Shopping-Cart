@@ -1,4 +1,4 @@
-import styles from "../styles/Buttons.module.css";
+import styles from "../styles/QuantityControls.module.css";
 import { useEffect, useState, useContext } from "react";
 import ClickableInput from "./ClickableInput";
 import CartContext from "../context/CartContext";
