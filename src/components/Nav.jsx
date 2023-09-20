@@ -26,7 +26,7 @@ const Nav = ({ toggleTheme }) => {
         <Link
           to="about"
           className={
-            currentPage.pathname === "/about" ? styles.currentPage : null
+            currentPage.pathname === "about" ? styles.currentPage : null
           }
         >
           About
@@ -34,7 +34,7 @@ const Nav = ({ toggleTheme }) => {
         <Link
           to="shop"
           className={
-            currentPage.pathname === "/shop" ? styles.currentPage : null
+            currentPage.pathname === "shop" ? styles.currentPage : null
           }
         >
           {" "}

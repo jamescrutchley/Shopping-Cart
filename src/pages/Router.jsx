@@ -29,7 +29,7 @@ const Router = () => {
         },
 
     ])
-    return <RouterProvider router={router} basename="/Shopping-Cart/"/>;
+    return <RouterProvider router={router} basename="/Shopping-Cart"/>;
   };
   
   export default Router;

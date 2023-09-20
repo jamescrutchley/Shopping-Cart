@@ -1,6 +1,7 @@
 @import "./Root.module.css";
 
 .featuredPanel {
+  position: relative;
   display: flex;
   background-image: url("../assets/icons/pawel-czerwinski.jpg");
   min-height: 50vh;
@@ -10,13 +11,14 @@
 .link {
   transform: skew(1deg);
   position: absolute;
-  right: 5%;
-  bottom: 20%;
   background-color: transparent;
   height: fit-content;
   width: fit-content;
-  padding: 8px;
-  margin: 32px 0px 0px 16px;
+  
+  bottom: 8px;
+  right: 8px;
+
+  padding: 4px 8px 4px 8px;
   opacity: 0.8;
   text-decoration: none;
   border: 2px solid var(--text-primary);
